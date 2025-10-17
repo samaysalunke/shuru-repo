@@ -182,10 +182,20 @@ def inject_dashboard_styles():
         box-shadow: 0 2px 8px rgba(41, 31, 59, 0.08);
     }
     
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
     .dashboard-logo {
         height: 40px;
-        margin-right: 1rem;
         vertical-align: middle;
+    }
+    
+    .header-content {
+        display: flex;
+        flex-direction: column;
     }
     
     .dashboard-title {
@@ -193,15 +203,12 @@ def inject_dashboard_styles():
         font-weight: 700;
         color: #291f3b;
         margin: 0;
-        display: inline-flex;
-        align-items: center;
-        gap: 1rem;
     }
     
     .dashboard-subtitle {
         font-size: 0.95rem;
         color: #64748B;
-        margin: 0.5rem 0 0 0;
+        margin: 0.25rem 0 0 0;
         font-weight: 400;
     }
     
@@ -293,14 +300,14 @@ def display_dashboard_header(title, subtitle=""):
     """Display dashboard header with Shuru Tech branding"""
     html = f"""
     <div class="dashboard-header">
-        <div>
-            <h1 class="dashboard-title">
-                <img src="https://www.shurutech.com/images/logo-black-text.png" 
-                     alt="Shuru Tech" 
-                     class="dashboard-logo" />
-                {title}
-            </h1>
-            {f'<p class="dashboard-subtitle">{subtitle}</p>' if subtitle else ''}
+        <div class="header-left">
+            <img src="https://www.shurutech.com/images/logo-black-text.png" 
+                 alt="Shuru Tech" 
+                 class="dashboard-logo" />
+            <div class="header-content">
+                <h1 class="dashboard-title">{title}</h1>
+                {f'<p class="dashboard-subtitle">{subtitle}</p>' if subtitle else ''}
+            </div>
         </div>
     </div>
     """
