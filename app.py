@@ -335,8 +335,8 @@ def main():
     
     # Display dashboard header
     display_dashboard_header(
-        "Shuru Tech Solutions Finder",
-        "AI-powered case study discovery and business solutions"
+        "🤖 ShuruMan",
+        "Have business questions? We already have answers"
     )
 
     # Initialize bot in session state
@@ -348,178 +348,104 @@ def main():
     if 'messages' not in st.session_state:
         st.session_state.messages = []
     
-    # Create three-column dashboard layout
-    col1, col2, col3 = st.columns([1, 2, 1])
+    # Create two-column layout: chat (wider) and case studies
+    col_chat, col_cases = st.columns([3, 1])
     
     # ==========================================
-    # LEFT PANEL: Stats & System Info
+    # LEFT PANEL: Chat Area (Main)
     # ==========================================
-    with col1:
-        display_panel_header("📊 Statistics")
+    with col_chat:
+        # Container for messages (scrollable area above input)
+        message_container = st.container()
         
-        # Load knowledge base stats
-        num_case_studies = 0
-        num_technologies = 0
-        num_industries = 0
-        
-        if os.path.exists('knowledge_base.json'):
-            try:
-                with open('knowledge_base.json', 'r', encoding='utf-8') as f:
-                    kb_data = json.load(f)
-                
-                # Count case studies
-                num_case_studies = len(kb_data.get('case_studies', []))
-                
-                # Extract unique technologies
-                technologies = set()
-                for case_study in kb_data.get('case_studies', []):
-                    technologies.update(case_study.get('technologies', []))
-                num_technologies = len(technologies)
-                
-                # Extract unique industries
-                industries = set()
-                for case_study in kb_data.get('case_studies', []):
-                    industry = case_study.get('industry', '')
-                    if industry:
-                        industries.add(industry)
-                num_industries = len(industries)
-            except:
-                pass
-        
-        # Display metric cards
-        display_metric_card("Case Studies", num_case_studies, "📁")
-        display_metric_card("Technologies", num_technologies, "⚙️")
-        display_metric_card("Industries", num_industries, "🏢")
-        
-        st.markdown("<br>", unsafe_allow_html=True)
-        display_panel_header("🔧 System Status")
-        
-        # System status
-        bot = st.session_state.bot
-        api_key = bot.anthropic_api_key
-        
-        st.markdown("**Model:** Claude 3.5 Sonnet")
-        st.markdown(f"**Temperature:** {os.getenv('TEMPERATURE', '0.7')}")
-        
-        if api_key:
-            display_status_badge("API Connected", "success")
-        else:
-            display_status_badge("API Missing", "error")
-        
-        st.markdown("<br>", unsafe_allow_html=True)
-        
-        # Clear conversation button
-        if st.button("🗑️ Clear Chat", use_container_width=True):
-            st.session_state.messages = []
-            st.session_state.bot = ShuruTechRAGBot()
-            st.rerun()
-    
-    # ==========================================
-    # CENTER PANEL: Chat Area
-    # ==========================================
-    with col2:
-        display_panel_header("💬 Chat")
-        
-        # Display chat messages
-        for message in st.session_state.messages:
-            with st.chat_message(message["role"]):
-                st.markdown(message["content"])
-                
-                # Show sources if available
-                if message["role"] == "assistant" and message.get("sources"):
-                    st.markdown('<hr style="margin: 2rem 0; border-top: 2px solid #E5E7EB;">', unsafe_allow_html=True)
-                    st.markdown("### 📚 Related Case Studies")
+        with message_container:
+            # Display all chat messages
+            for message in st.session_state.messages:
+                with st.chat_message(message["role"]):
+                    st.markdown(message["content"])
                     
-                    # Display case study sources
-                    sources = message["sources"]
-                    case_studies = []
-                    
-                    for source in sources:
-                        if source.metadata.get('type') == 'case_study':
-                            client_name = source.metadata.get('client_name', 'Unknown')
-                            if not any(cs.metadata.get('client_name') == client_name for cs in case_studies):
-                                case_studies.append(source)
-                    
-                    # Display in expandable sections
-                    if case_studies:
-                        for source in case_studies:
-                            client_name = source.metadata.get('client_name', 'Unknown')
-                            industry = source.metadata.get('industry', 'N/A')
-                            
-                            with st.expander(f"🔹 **{client_name}** - {industry}"):
-                                content = source.page_content
+                    # Show sources if available
+                    if message["role"] == "assistant" and message.get("sources"):
+                        st.markdown('<hr style="margin: 2rem 0; border-top: 2px solid #E5E7EB;">', unsafe_allow_html=True)
+                        st.markdown("### 📚 Related Case Studies")
+                        
+                        # Display case study sources
+                        sources = message["sources"]
+                        case_studies = []
+                        
+                        for source in sources:
+                            if source.metadata.get('type') == 'case_study':
+                                client_name = source.metadata.get('client_name', 'Unknown')
+                                if not any(cs.metadata.get('client_name') == client_name for cs in case_studies):
+                                    case_studies.append(source)
+                        
+                        # Display in expandable sections
+                        if case_studies:
+                            for source in case_studies:
+                                client_name = source.metadata.get('client_name', 'Unknown')
+                                industry = source.metadata.get('industry', 'N/A')
                                 
-                                # Parse and display sections
-                                sections = {}
-                                current_section = None
-                                current_content = []
-                                
-                                for line in content.split('\n'):
-                                    line = line.strip()
-                                    if line.endswith(':') and line[:-1] in ['Problem', 'Solution', 'Results', 'Technologies Used', 'Duration']:
-                                        if current_section:
-                                            sections[current_section] = '\n'.join(current_content).strip()
-                                        current_section = line[:-1]
-                                        current_content = []
-                                    elif line and current_section:
-                                        current_content.append(line)
-                                
-                                if current_section:
-                                    sections[current_section] = '\n'.join(current_content).strip()
-                                
-                                # Display structured information
-                                if 'Problem' in sections:
-                                    st.markdown(f"**Problem:**")
-                                    st.markdown(sections['Problem'])
-                                    st.markdown("")
-                                
-                                if 'Solution' in sections:
-                                    st.markdown(f"**Solution:**")
-                                    st.markdown(sections['Solution'])
-                                    st.markdown("")
-                                
-                                if 'Technologies Used' in sections:
-                                    st.markdown(f"**Technologies Used:**")
-                                    st.markdown(sections['Technologies Used'])
-                                    st.markdown("")
-                                
-                                if 'Results' in sections:
-                                    st.markdown(f"**Results:**")
-                                    st.markdown(sections['Results'])
-                                    st.markdown("")
-                                
-                                if 'Duration' in sections:
-                                    st.markdown(f"**Duration:** {sections['Duration']}")
+                                with st.expander(f"🔹 **{client_name}** - {industry}"):
+                                    content = source.page_content
+                                    
+                                    # Parse and display sections
+                                    sections = {}
+                                    current_section = None
+                                    current_content = []
+                                    
+                                    for line in content.split('\n'):
+                                        line = line.strip()
+                                        if line.endswith(':') and line[:-1] in ['Problem', 'Solution', 'Results', 'Technologies Used', 'Duration']:
+                                            if current_section:
+                                                sections[current_section] = '\n'.join(current_content).strip()
+                                            current_section = line[:-1]
+                                            current_content = []
+                                        elif line and current_section:
+                                            current_content.append(line)
+                                    
+                                    if current_section:
+                                        sections[current_section] = '\n'.join(current_content).strip()
+                                    
+                                    # Display structured information
+                                    if 'Problem' in sections:
+                                        st.markdown(f"**Problem:**")
+                                        st.markdown(sections['Problem'])
+                                        st.markdown("")
+                                    
+                                    if 'Solution' in sections:
+                                        st.markdown(f"**Solution:**")
+                                        st.markdown(sections['Solution'])
+                                        st.markdown("")
+                                    
+                                    if 'Technologies Used' in sections:
+                                        st.markdown(f"**Technologies Used:**")
+                                        st.markdown(sections['Technologies Used'])
+                                        st.markdown("")
+                                    
+                                    if 'Results' in sections:
+                                        st.markdown(f"**Results:**")
+                                        st.markdown(sections['Results'])
+                                        st.markdown("")
+                                    
+                                    if 'Duration' in sections:
+                                        st.markdown(f"**Duration:** {sections['Duration']}")
         
-        # Chat input
-        prompt = st.chat_input("Describe your business challenge...")
+        # Chat input at bottom (outside container, always visible)
+        prompt = st.chat_input("Type your business question...")
     
     # ==========================================
     # RIGHT PANEL: Case Study Browser
     # ==========================================
-    with col3:
+    with col_cases:
         display_panel_header("📚 Case Studies")
         
-        # Search/filter input
-        search_term = st.text_input("🔍 Filter by name", key="case_study_filter", placeholder="Search...")
-        
-        st.markdown("<br>", unsafe_allow_html=True)
-        
-        # Load and display case studies
+        # Load and display case studies (no filter)
         if os.path.exists('knowledge_base.json'):
             try:
                 with open('knowledge_base.json', 'r', encoding='utf-8') as f:
                     kb_data = json.load(f)
                 
                 case_studies_list = kb_data.get('case_studies', [])
-                
-                # Filter by search term
-                if search_term:
-                    case_studies_list = [
-                        cs for cs in case_studies_list
-                        if search_term.lower() in cs.get('client_name', '').lower()
-                        or search_term.lower() in cs.get('industry', '').lower()
-                    ]
                 
                 # Display case studies
                 for cs in case_studies_list[:15]:  # Limit to 15 items

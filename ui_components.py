@@ -31,48 +31,7 @@ def inject_dashboard_styles():
         display: none;
     }
     
-    /* Metric card styles */
-    .metric-card {
-        background: white;
-        border: 1px solid #E5E7EB;
-        border-radius: 12px;
-        padding: 1.5rem;
-        margin-bottom: 1rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    }
-    
-    .metric-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        border-color: #3B82F6;
-    }
-    
-    .metric-card-value {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #1F2937;
-        margin-bottom: 0.25rem;
-    }
-    
-    .metric-card-label {
-        font-size: 0.875rem;
-        color: #6B7280;
-        font-weight: 500;
-    }
-    
-    .metric-card-icon {
-        width: 3rem;
-        height: 3rem;
-        background: #EFF6FF;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1rem;
-        color: #3B82F6;
-        font-size: 1.5rem;
-    }
+    /* Removed metric card styles - no longer used */
     
     /* Case study list item */
     .case-study-item {
@@ -203,32 +162,24 @@ def inject_dashboard_styles():
         border-bottom: 2px solid #E5E7EB;
     }
     
-    /* Status badge */
-    .status-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.375rem;
-        padding: 0.375rem 0.75rem;
-        background: #EFF6FF;
-        color: #3B82F6;
-        border-radius: 6px;
-        font-size: 0.875rem;
-        font-weight: 500;
+    /* Removed status badge styles - no longer used */
+    
+    /* Chat container - full height with scroll */
+    .chat-container {
+        height: calc(100vh - 250px);
+        overflow-y: auto;
+        padding-bottom: 1rem;
     }
     
-    .status-badge.success {
-        background: #ECFDF5;
-        color: #10B981;
-    }
-    
-    .status-badge.error {
-        background: #FEF2F2;
-        color: #EF4444;
-    }
-    
-    /* Chat input styling */
+    /* Chat input - sticky at bottom */
     [data-testid="stChatInput"] {
+        position: sticky;
+        bottom: 0;
+        background: white;
+        padding: 1rem 0;
         margin-top: 1rem;
+        z-index: 100;
+        border-top: 1px solid #E5E7EB;
     }
     
     [data-testid="stChatInput"] input,
@@ -249,16 +200,7 @@ def inject_dashboard_styles():
     """, unsafe_allow_html=True)
 
 
-def display_metric_card(label, value, icon="📊"):
-    """Display a metric card with value and label"""
-    html = f"""
-    <div class="metric-card">
-        <div class="metric-card-icon">{icon}</div>
-        <div class="metric-card-value">{value}</div>
-        <div class="metric-card-label">{label}</div>
-    </div>
-    """
-    st.markdown(html, unsafe_allow_html=True)
+# Removed: display_metric_card() - no longer used in two-column layout
 
 
 def display_case_study_item(client_name, industry, icon="💼"):
@@ -280,12 +222,7 @@ def display_panel_header(title):
     st.markdown(f'<div class="panel-header">{title}</div>', unsafe_allow_html=True)
 
 
-def display_status_badge(text, status="default"):
-    """Display a status badge"""
-    badge_class = f"status-badge {status}"
-    icon = "✓" if status == "success" else "✗" if status == "error" else "•"
-    html = f'<span class="{badge_class}">{icon} {text}</span>'
-    st.markdown(html, unsafe_allow_html=True)
+# Removed: display_status_badge() - no longer used in two-column layout
 
 
 def display_dashboard_header(title, subtitle=""):
