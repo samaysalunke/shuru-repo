@@ -22,7 +22,7 @@ def inject_dashboard_styles():
     /* Remove default Streamlit padding */
     .main .block-container {
         padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-bottom: 120px !important;
         max-width: 100%;
     }
     
@@ -211,36 +211,23 @@ def inject_dashboard_styles():
         padding-bottom: 1rem;
     }
     
-    /* Make chat column fill height */
-    [data-testid="column"]:first-child {
-        display: flex;
-        flex-direction: column;
-        height: calc(100vh - 180px);
-    }
-
-    /* Chat input - force to bottom */
+    /* Chat input - force to viewport bottom */
     [data-testid="stChatInput"] {
-        position: sticky !important;
+        position: fixed !important;
         bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
         background: white;
-        padding: 1rem 0;
-        margin-top: auto !important;  /* Push to bottom */
+        padding: 1.5rem 2rem;
         z-index: 1000;
         border-top: 2px solid #E5E7EB;
-        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
     }
-
-    /* Messages container - scrollable */
-    .chat-messages {
-        flex: 1;
-        overflow-y: auto;
-        padding-bottom: 1rem;
-        scroll-behavior: smooth;
-    }
-
-    /* Auto-scroll to bottom when new message */
-    .chat-messages:last-child {
-        scroll-snap-align: end;
+    
+    /* Center the input field within the fixed container */
+    [data-testid="stChatInput"] > div {
+        max-width: 1200px;
+        margin: 0 auto;
     }
     
     [data-testid="stChatInput"] input,
