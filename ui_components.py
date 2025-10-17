@@ -7,24 +7,69 @@ import streamlit as st
 
 
 def inject_dashboard_styles():
-    """Inject minimal dashboard styles into Streamlit"""
+    """Inject dark ChatGPT-style dashboard styles into Streamlit"""
     st.markdown("""
     <style>
     /* Import Inter font */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     
-    /* Global styles - Shuru Tech Brand */
+    /* Global styles - Clean Light Theme */
     .stApp {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background: #FFFFFF;
-        color: #291f3b;
+        background: #ffffff !important;
+        color: #1a1a1a !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    /* Ensure no scrolling on main container */
+    .main {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    /* Force dark text on all elements */
+    .stApp * {
+        color: #1a1a1a !important;
+    }
+    
+    /* Override Streamlit default text colors */
+    .stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6 {
+        color: #1a1a1a !important;
+    }
+    
+    .stApp p, .stApp div, .stApp span {
+        color: #1a1a1a !important;
+    }
+    
+    .stApp button {
+        color: #1a1a1a !important;
+    }
+    
+    /* Ensure no scrolling in empty state */
+    .main {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    /* Touch-friendly interactions */
+    * {
+        -webkit-tap-highlight-color: rgba(41, 31, 59, 0.1);
+    }
+    
+    /* Better text rendering on mobile */
+    body {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
     }
     
     /* Remove default Streamlit padding */
     .main .block-container {
-        padding-top: 2rem;
-        padding-bottom: 120px !important;
+        padding: 0;
         max-width: 100%;
+        background: #ffffff;
     }
     
     /* Hide sidebar */
@@ -170,52 +215,89 @@ def inject_dashboard_styles():
         border-color: #D1D5DB;
     }
     
-    /* Header styles - Shuru Tech Brand */
+    /* Clean light header */
     .dashboard-header {
-        background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
-        border-bottom: 3px solid #291f3b;
-        padding: 2rem 2.5rem;
-        margin: -2rem -2rem 2.5rem -2rem;
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 1rem 1.5rem;
+        margin: 0;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        box-shadow: 0 4px 20px rgba(41, 31, 59, 0.12);
-        border-radius: 0 0 16px 16px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 0;
+        height: 60px;
     }
     
-    .header-left {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
+    .shuru-logo {
+        height: 32px;
+        filter: none;
+        display: block;
+        margin: 0 auto;
     }
     
-    .dashboard-logo {
-        height: 48px;
-        vertical-align: middle;
-        filter: drop-shadow(0 2px 4px rgba(41, 31, 59, 0.1));
-    }
-    
-    .header-content {
+    /* Main content area - prevent scrolling */
+    .main-content {
+        background: #ffffff;
+        height: calc(100vh - 180px);
         display: flex;
         flex-direction: column;
-        gap: 0.25rem;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2rem;
+        overflow: hidden;
     }
     
-    .dashboard-title {
+    /* Chat messages container - scrollable within main content */
+    .chat-messages-container {
+        width: 100%;
+        max-width: 800px;
+        flex: 1;
+        overflow-y: auto;
+        padding-bottom: 1rem;
+        max-height: calc(100vh - 300px);
+    }
+    
+    /* Hide greeting when chat messages exist */
+    .main-content:has(.chat-messages-container) .greeting-text {
+        display: none;
+    }
+    
+    /* Chat message styling */
+    [data-testid="stChatMessage"] {
+        background: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        color: #1a1a1a !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Hide greeting and prompts when chat is active */
+    .main-content:has([data-testid="stChatMessage"]) .greeting-text,
+    .main-content:has([data-testid="stChatMessage"]) .prompt-buttons-container {
+        display: none;
+    }
+    
+    /* Override Streamlit button styles for light theme */
+    .stApp button[kind="primary"],
+    .stApp button[kind="secondary"],
+    .stApp .stButton > button {
+        background: #f9fafb !important;
+        color: #1a1a1a !important;
+        border: 1px solid #d1d5db !important;
+    }
+    
+    .stApp button:hover {
+        background: #f3f4f6 !important;
+        color: #1a1a1a !important;
+        border-color: #9ca3af !important;
+    }
+    
+    .greeting-text {
         font-size: 2rem;
-        font-weight: 800;
-        color: #291f3b;
+        font-weight: 600;
+        color: #1a1a1a !important;
+        text-align: center;
         margin: 0;
-        letter-spacing: -0.5px;
-        text-shadow: 0 1px 2px rgba(41, 31, 59, 0.1);
-    }
-    
-    .dashboard-subtitle {
-        font-size: 1rem;
-        color: #64748B;
-        margin: 0;
-        font-weight: 500;
-        line-height: 1.4;
     }
     
     /* Panel headers */
@@ -237,41 +319,95 @@ def inject_dashboard_styles():
         padding-bottom: 1rem;
     }
     
-    /* Chat input - force to viewport bottom */
+    /* Light input bar */
     [data-testid="stChatInput"] {
         position: fixed !important;
         bottom: 0 !important;
         left: 0 !important;
         right: 0 !important;
-        background: white;
-        padding: 1.5rem 2rem;
-        z-index: 1000;
-        border-top: 2px solid #E5E7EB;
-        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+        background: #ffffff !important;
+        padding: 1rem 1.5rem !important;
+        z-index: 1000 !important;
+        border-top: 1px solid #e5e7eb !important;
+        box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1) !important;
+        display: block !important;
     }
     
     /* Center the input field within the fixed container */
     [data-testid="stChatInput"] > div {
-        max-width: 1200px;
+        max-width: 800px;
         margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    /* Hide Streamlit input buttons we don't want */
+    [data-testid="stChatInput"] button[title="Attach files"] {
+        display: none !important;
+    }
+    
+    [data-testid="stChatInput"] button[title="Voice input"] {
+        display: none !important;
     }
     
     [data-testid="stChatInput"] input,
     [data-testid="stChatInput"] textarea {
-        border: 2px solid #E2E8F0 !important;
+        background: #f9fafb !important;
+        border: 1px solid #d1d5db !important;
         border-radius: 12px !important;
         padding: 0.875rem 1rem !important;
         font-size: 0.875rem !important;
-        transition: all 0.2s ease !important;
-        background: #FFFFFF !important;
-        color: #291f3b !important;
+        color: #1a1a1a !important;
+        flex: 1;
+    }
+    
+    [data-testid="stChatInput"] input::placeholder,
+    [data-testid="stChatInput"] textarea::placeholder {
+        color: #6b7280 !important;
     }
     
     [data-testid="stChatInput"] input:focus,
     [data-testid="stChatInput"] textarea:focus {
-        border-color: #291f3b !important;
-        box-shadow: 0 0 0 3px rgba(41, 31, 59, 0.1) !important;
+        border-color: #3b82f6 !important;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
         outline: none !important;
+    }
+    
+    /* Prompt buttons below input */
+    .prompt-buttons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 2rem;
+        max-width: 600px;
+        width: 100%;
+    }
+    
+    .prompt-button-row {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+    }
+    
+    .prompt-button {
+        background: #f9fafb !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 12px;
+        padding: 0.75rem 1rem;
+        color: #1a1a1a !important;
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        flex: 1;
+        text-align: center;
+    }
+    
+    .prompt-button:hover {
+        background: #f3f4f6 !important;
+        border-color: #9ca3af !important;
+        color: #1a1a1a !important;
     }
 
     /* Clickable prompts styling */
@@ -328,6 +464,232 @@ def inject_dashboard_styles():
         margin-right: 0.75rem;
         vertical-align: middle;
     }
+    
+    /* ============================================ */
+    /* MOBILE RESPONSIVE STYLES */
+    /* ============================================ */
+    
+    /* Tablets and smaller (max-width: 768px) */
+    @media screen and (max-width: 768px) {
+        /* Reduce padding on mobile */
+        .main .block-container {
+            padding-top: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 100px !important;
+        }
+        
+        /* Stack Streamlit columns on mobile */
+        [data-testid="column"] {
+            width: 100% !important;
+            flex: 0 0 100% !important;
+        }
+        
+        /* Remove column gaps on mobile */
+        [data-testid="stHorizontalBlock"] {
+            gap: 0 !important;
+            flex-direction: column !important;
+        }
+        
+        /* Mobile header adjustments */
+        .dashboard-header {
+            padding: 1rem;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .greeting-text {
+            font-size: 1.5rem;
+            color: #1a1a1a !important;
+        }
+        
+        .main-content {
+            padding: 1rem;
+            height: calc(100vh - 100px);
+            background: #ffffff;
+        }
+        
+        /* Mobile prompt buttons */
+        .prompt-buttons-container {
+            margin-top: 1.5rem;
+        }
+        
+        .prompt-button {
+            font-size: 0.8125rem;
+            padding: 0.625rem 0.875rem;
+        }
+        
+        .header-left {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+            width: 100%;
+        }
+        
+        .dashboard-logo {
+            height: 32px;
+        }
+        
+        .dashboard-title {
+            font-size: 1.25rem;
+            letter-spacing: -0.3px;
+        }
+        
+        .dashboard-subtitle {
+            font-size: 0.8125rem;
+            line-height: 1.3;
+        }
+        
+        /* Mobile chat messages */
+        [data-testid="stChatMessage"] {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+        }
+        
+        /* Mobile chat input */
+        [data-testid="stChatInput"] {
+            padding: 1rem;
+        }
+        
+        [data-testid="stChatInput"] input,
+        [data-testid="stChatInput"] textarea {
+            padding: 0.75rem !important;
+            font-size: 0.875rem !important;
+        }
+        
+        /* Mobile prompt section */
+        .prompt-section {
+            padding: 2rem 1rem;
+            margin: 1rem 0;
+            border-radius: 16px;
+        }
+        
+        .prompt-title {
+            font-size: 1.25rem;
+        }
+        
+        .prompt-subtitle {
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .prompt-button {
+            padding: 1rem 1.25rem;
+            font-size: 0.875rem;
+            border-radius: 12px;
+        }
+        
+        /* Mobile case study items */
+        .case-study-item {
+            padding: 0.75rem;
+            gap: 0.5rem;
+        }
+        
+        .case-study-icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            font-size: 0.875rem;
+        }
+        
+        .case-study-client {
+            font-size: 0.8125rem;
+        }
+        
+        .case-study-industry {
+            font-size: 0.6875rem;
+        }
+        
+        /* Mobile CTA */
+        .sales-cta-container {
+            padding: 1rem !important;
+            margin: 1rem 0 !important;
+            border-radius: 12px !important;
+        }
+        
+        .cta-button {
+            padding: 0.75rem 2rem !important;
+            font-size: 0.95rem !important;
+            min-height: 44px !important;
+        }
+        
+        .cta-message, .cta-subtitle {
+            font-size: 0.8125rem !important;
+        }
+        
+        /* Touch-friendly button sizes */
+        button {
+            min-height: 44px !important;
+            touch-action: manipulation;
+        }
+        
+        /* Better touch targets for prompts */
+        .prompt-button {
+            min-height: 48px !important;
+        }
+    }
+    
+    /* Small mobile phones (max-width: 480px) */
+    @media screen and (max-width: 480px) {
+        .main .block-container {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+        
+        .dashboard-header {
+            padding: 0.75rem;
+            margin: -1rem -0.75rem 1rem -0.75rem;
+        }
+        
+        .dashboard-logo {
+            height: 28px;
+        }
+        
+        .dashboard-title {
+            font-size: 1.125rem;
+        }
+        
+        .dashboard-subtitle {
+            font-size: 0.8125rem;
+        }
+        
+        [data-testid="stChatMessage"] {
+            padding: 0.875rem;
+        }
+        
+        [data-testid="stChatInput"] {
+            padding: 0.75rem;
+        }
+        
+        .prompt-section {
+            padding: 1.5rem 0.75rem;
+        }
+        
+        .prompt-title {
+            font-size: 1.125rem;
+        }
+        
+        .prompt-subtitle {
+            font-size: 0.8125rem;
+        }
+        
+        .prompt-button {
+            padding: 0.875rem 1rem;
+            font-size: 0.8125rem;
+        }
+    }
+    
+    /* Large desktops (min-width: 1400px) */
+    @media screen and (min-width: 1400px) {
+        .main .block-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        [data-testid="stChatInput"] > div {
+            max-width: 1400px;
+        }
+    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -377,13 +739,27 @@ def display_dashboard_header(title, subtitle=""):
 
 def display_sales_cta():
     """Display a prominent CTA button for contacting Shuru Tech"""
-    html = f"""
-    <div style="margin: 1.5rem 0; padding: 1.25rem; background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%); border: 2px solid #291f3b; border-radius: 16px; text-align: center; box-shadow: 0 4px 16px rgba(41, 31, 59, 0.12);">
-        <p style="margin: 0 0 1rem 0; font-size: 1rem; color: #291f3b; font-weight: 600; line-height: 1.5;">
+    html = """
+    <div class="sales-cta-container" style="
+        margin: 1.5rem 0; 
+        padding: 1.25rem; 
+        background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%); 
+        border: 2px solid #291f3b; 
+        border-radius: 16px; 
+        text-align: center; 
+        box-shadow: 0 4px 16px rgba(41, 31, 59, 0.12);
+    ">
+        <p class="cta-message" style="
+            margin: 0 0 1rem 0; 
+            font-size: 1rem; 
+            color: #291f3b; 
+            font-weight: 600; 
+            line-height: 1.5;
+        ">
             💡 Ready to build smarter and scale faster?
         </p>
         <a href="https://www.shurutech.com/contact-us" target="_blank" style="text-decoration: none;">
-            <button style="
+            <button class="cta-button" style="
                 background: linear-gradient(135deg, #291f3b 0%, #3d2f5a 100%);
                 color: white;
                 border: none;
@@ -395,45 +771,110 @@ def display_sales_cta():
                 box-shadow: 0 6px 20px rgba(41, 31, 59, 0.3);
                 transition: all 0.3s ease;
                 letter-spacing: 0.5px;
+                width: auto;
+                min-width: 200px;
             "
             onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 24px rgba(41, 31, 59, 0.4)';"
             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(41, 31, 59, 0.3)';">
                 Contact Us
             </button>
         </a>
-        <p style="margin: 1rem 0 0 0; font-size: 0.875rem; color: #64748B; font-weight: 500;">
+        <p class="cta-subtitle" style="
+            margin: 1rem 0 0 0; 
+            font-size: 0.875rem; 
+            color: #64748B; 
+            font-weight: 500;
+        ">
             Let's discuss how we can help transform your business
         </p>
     </div>
+    
+    <style>
+    /* Mobile CTA responsiveness */
+    @media screen and (max-width: 768px) {
+        .sales-cta-container {
+            padding: 1rem !important;
+            margin: 1rem 0 !important;
+            border-radius: 12px !important;
+        }
+        
+        .cta-message {
+            font-size: 0.9375rem !important;
+        }
+        
+        .cta-button {
+            padding: 0.75rem 1.75rem !important;
+            font-size: 0.9375rem !important;
+            width: 100% !important;
+            max-width: 300px;
+        }
+        
+        .cta-subtitle {
+            font-size: 0.8125rem !important;
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        .cta-button {
+            padding: 0.75rem 1.5rem !important;
+            font-size: 0.875rem !important;
+        }
+    }
+    </style>
     """
     st.markdown(html, unsafe_allow_html=True)
 
 
-def display_chat_prompts():
-    """Display clickable prompts when chat is empty"""
-    html = f"""
-    <div class="prompt-section">
-        <h2 class="prompt-title">👋 How can I help you today?</h2>
-        <p class="prompt-subtitle">Choose a prompt to get started with Shuru Tech's AI assistant</p>
+# Removed display_chat_prompts() - replaced with display_dark_prompts()
+
+
+def display_dark_header():
+    """Display simplified header with Shuru logo only"""
+    html = """
+    <div class="dashboard-header">
+        <img src="https://www.shurutech.com/images/logo-black-text.png" 
+             alt="Shuru Tech" 
+             class="shuru-logo" />
     </div>
     """
     st.markdown(html, unsafe_allow_html=True)
+
+
+def display_dark_greeting():
+    """Display centered greeting in dark theme"""
+    html = """
+    <div class="main-content">
+        <h1 class="greeting-text">How can I help you today?</h1>
+    </div>
+    """
+    st.markdown(html, unsafe_allow_html=True)
+
+
+def display_dark_prompts():
+    """Display prompt buttons below the greeting"""
+    # Create prompt buttons using Streamlit
+    st.markdown("""
+    <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+    """, unsafe_allow_html=True)
     
-    # Create three columns for the prompts
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
     
     with col1:
-        if st.button("🚀 What services does Shuru Tech offer?", key="prompt1", use_container_width=True):
+        if st.button("🚀 What services does Shuru Tech offer?", key="dark_prompt1", use_container_width=True):
             st.session_state.selected_prompt = "What services does Shuru Tech offer?"
             st.rerun()
     
     with col2:
-        if st.button("🤖 How can AI transform my business operations?", key="prompt2", use_container_width=True):
+        if st.button("🤖 How can AI transform my business operations?", key="dark_prompt2", use_container_width=True):
             st.session_state.selected_prompt = "How can AI transform my business operations?"
             st.rerun()
     
-    with col3:
-        if st.button("💬 Tell me about your RAG chatbot capabilities", key="prompt3", use_container_width=True):
+    # Third button centered
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        if st.button("💬 Tell me about your RAG chatbot capabilities", key="dark_prompt3", use_container_width=True):
             st.session_state.selected_prompt = "Tell me about your RAG chatbot capabilities"
             st.rerun()
+    
+    st.markdown("</div>", unsafe_allow_html=True)
 

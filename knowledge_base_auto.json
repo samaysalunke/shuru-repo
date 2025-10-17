@@ -16,7 +16,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:05",
+        "extracted_at": "2025-10-17 23:41:45",
         "confidence": "high"
       }
     },
@@ -36,7 +36,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:05",
+        "extracted_at": "2025-10-17 23:41:45",
         "confidence": "high"
       }
     },
@@ -55,7 +55,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:05",
+        "extracted_at": "2025-10-17 23:41:45",
         "confidence": "high"
       }
     },
@@ -75,7 +75,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/services/ai-and-automation",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:07",
+        "extracted_at": "2025-10-17 23:41:48",
         "confidence": "high"
       }
     },
@@ -95,7 +95,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/services/ai-and-automation",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:07",
+        "extracted_at": "2025-10-17 23:41:48",
         "confidence": "high"
       }
     },
@@ -114,7 +114,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/services/ai-and-automation",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:07",
+        "extracted_at": "2025-10-17 23:41:48",
         "confidence": "high"
       }
     },
@@ -132,7 +132,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/services/ai-and-automation",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:07",
+        "extracted_at": "2025-10-17 23:41:48",
         "confidence": "medium"
       }
     },
@@ -149,7 +149,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/services/ai-and-automation",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:07",
+        "extracted_at": "2025-10-17 23:41:48",
         "confidence": "medium"
       }
     },
@@ -167,9 +167,9 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/engineering-team-extension",
+      "source_url": "https://www.shurutech.com/services/api-development-integration",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:09",
+        "extracted_at": "2025-10-17 23:41:49",
         "confidence": "high"
       }
     },
@@ -187,9 +187,9 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/engineering-team-extension",
+      "source_url": "https://www.shurutech.com/services/api-development-integration",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:09",
+        "extracted_at": "2025-10-17 23:41:49",
         "confidence": "high"
       }
     },
@@ -206,40 +206,49 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/engineering-team-extension",
+      "source_url": "https://www.shurutech.com/services/api-development-integration",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:09",
+        "extracted_at": "2025-10-17 23:41:49",
         "confidence": "high"
       }
     },
     {
       "id": 12,
-      "client_name": "Staff Augmentation Solutions",
+      "client_name": "Custom API Development",
       "industry": "Automotive",
       "challenge": "Problem description not found",
-      "solution": "Solutions Access pre-vetted developers who integrate seamlessly into your workflows, boosting velocity without the overhead of full-time hiring",
-      "technologies_used": [],
+      "solution": "Solution description not found",
+      "technologies_used": [
+        "GraphQL",
+        "REST",
+        "gRPC"
+      ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/engineering-team-extension",
+      "source_url": "https://www.shurutech.com/services/api-development-integration",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:09",
-        "confidence": "medium"
+        "extracted_at": "2025-10-17 23:41:49",
+        "confidence": "high"
       }
     },
     {
       "id": 13,
-      "client_name": "Technology Pods Solutions",
-      "industry": "Logistics",
+      "client_name": "Yoedi Hariadi Kurniawan",
+      "industry": "Automotive",
       "challenge": "Problem description not found",
-      "solution": "Solutions Ideal for fast-moving projects or scaling delivery, our software team extension model ensures end-to-end ownership, speed, and flexibility",
-      "technologies_used": [],
+      "solution": "approach made the entire process seamless",
+      "technologies_used": [
+        "AI",
+        "Go",
+        "MySQL",
+        "PHP"
+      ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/engineering-team-extension",
+      "source_url": "https://www.shurutech.com/services/cloud-and-devops",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:09",
-        "confidence": "medium"
+        "extracted_at": "2025-10-17 23:41:51",
+        "confidence": "high"
       }
     },
     {
@@ -256,34 +265,14 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/tech-consulting",
+      "source_url": "https://www.shurutech.com/services/cloud-and-devops",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:10",
+        "extracted_at": "2025-10-17 23:41:51",
         "confidence": "high"
       }
     },
     {
       "id": 15,
-      "client_name": "Yoedi Hariadi Kurniawan",
-      "industry": "Automotive",
-      "challenge": "Problem description not found",
-      "solution": "approach made the entire process seamless",
-      "technologies_used": [
-        "AI",
-        "Go",
-        "MySQL",
-        "PHP"
-      ],
-      "business_impact": "Results not specified",
-      "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/tech-consulting",
-      "metadata": {
-        "extracted_at": "2025-10-17 13:31:10",
-        "confidence": "high"
-      }
-    },
-    {
-      "id": 16,
       "client_name": "Yoedi Hariadi Kurniawan",
       "industry": "Automotive",
       "challenge": "Problem description not found",
@@ -295,9 +284,28 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/tech-consulting",
+      "source_url": "https://www.shurutech.com/services/cloud-and-devops",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:10",
+        "extracted_at": "2025-10-17 23:41:51",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": 16,
+      "client_name": "Build",
+      "industry": "Automotive",
+      "challenge": "Problem description not found",
+      "solution": "Solution description not found",
+      "technologies_used": [
+        "Bitbucket",
+        "Docker",
+        "Kubernetes"
+      ],
+      "business_impact": "Results not specified",
+      "project_duration": "Not specified",
+      "source_url": "https://www.shurutech.com/services/cloud-and-devops",
+      "metadata": {
+        "extracted_at": "2025-10-17 23:41:51",
         "confidence": "high"
       }
     },
@@ -317,7 +325,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/services/custom-software-development",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:11",
+        "extracted_at": "2025-10-17 23:41:52",
         "confidence": "high"
       }
     },
@@ -337,7 +345,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/services/custom-software-development",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:11",
+        "extracted_at": "2025-10-17 23:41:52",
         "confidence": "high"
       }
     },
@@ -356,7 +364,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/services/custom-software-development",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:11",
+        "extracted_at": "2025-10-17 23:41:52",
         "confidence": "high"
       }
     },
@@ -371,7 +379,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/services/custom-software-development",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:11",
+        "extracted_at": "2025-10-17 23:41:52",
         "confidence": "medium"
       }
     },
@@ -389,9 +397,9 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/product-engineering",
+      "source_url": "https://www.shurutech.com/services/data-analytics-and-visualisation",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:13",
+        "extracted_at": "2025-10-17 23:41:53",
         "confidence": "high"
       }
     },
@@ -409,9 +417,9 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/product-engineering",
+      "source_url": "https://www.shurutech.com/services/data-analytics-and-visualisation",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:13",
+        "extracted_at": "2025-10-17 23:41:53",
         "confidence": "high"
       }
     },
@@ -428,26 +436,24 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/product-engineering",
+      "source_url": "https://www.shurutech.com/services/data-analytics-and-visualisation",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:13",
+        "extracted_at": "2025-10-17 23:41:53",
         "confidence": "high"
       }
     },
     {
       "id": 24,
-      "client_name": "Maintenance & Support",
-      "industry": "Media & Entertainment",
+      "client_name": "Create Dashboard",
+      "industry": "Education",
       "challenge": "Problem description not found",
-      "solution": "solution into your existing environment and oversee a smooth, secure deployment for immediate operational impact",
-      "technologies_used": [
-        "AI"
-      ],
+      "solution": "solutions bring to light key trends, patterns, and facts from raw data, helping executives plan the best course of action for the business",
+      "technologies_used": [],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/product-engineering",
+      "source_url": "https://www.shurutech.com/services/data-analytics-and-visualisation",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:13",
+        "extracted_at": "2025-10-17 23:41:53",
         "confidence": "medium"
       }
     },
@@ -467,7 +473,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/services/data-engineering",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:14",
+        "extracted_at": "2025-10-17 23:41:55",
         "confidence": "high"
       }
     },
@@ -487,7 +493,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/services/data-engineering",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:14",
+        "extracted_at": "2025-10-17 23:41:55",
         "confidence": "high"
       }
     },
@@ -506,7 +512,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/services/data-engineering",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:14",
+        "extracted_at": "2025-10-17 23:41:55",
         "confidence": "high"
       }
     },
@@ -524,9 +530,9 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/cloud-and-devops",
+      "source_url": "https://www.shurutech.com/services/engineering-team-extension",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:15",
+        "extracted_at": "2025-10-17 23:41:56",
         "confidence": "high"
       }
     },
@@ -544,9 +550,9 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/cloud-and-devops",
+      "source_url": "https://www.shurutech.com/services/engineering-team-extension",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:15",
+        "extracted_at": "2025-10-17 23:41:56",
         "confidence": "high"
       }
     },
@@ -563,49 +569,40 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/cloud-and-devops",
+      "source_url": "https://www.shurutech.com/services/engineering-team-extension",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:15",
+        "extracted_at": "2025-10-17 23:41:56",
         "confidence": "high"
       }
     },
     {
       "id": 31,
-      "client_name": "Build",
+      "client_name": "Staff Augmentation Solutions",
       "industry": "Automotive",
       "challenge": "Problem description not found",
-      "solution": "Solution description not found",
-      "technologies_used": [
-        "Bitbucket",
-        "Docker",
-        "Kubernetes"
-      ],
+      "solution": "Solutions Access pre-vetted developers who integrate seamlessly into your workflows, boosting velocity without the overhead of full-time hiring",
+      "technologies_used": [],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/cloud-and-devops",
+      "source_url": "https://www.shurutech.com/services/engineering-team-extension",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:15",
-        "confidence": "high"
+        "extracted_at": "2025-10-17 23:41:56",
+        "confidence": "medium"
       }
     },
     {
       "id": 32,
-      "client_name": "Yoedi Hariadi Kurniawan",
-      "industry": "Automotive",
+      "client_name": "Technology Pods Solutions",
+      "industry": "Logistics",
       "challenge": "Problem description not found",
-      "solution": "approach made the entire process seamless",
-      "technologies_used": [
-        "AI",
-        "Go",
-        "MySQL",
-        "PHP"
-      ],
+      "solution": "Solutions Ideal for fast-moving projects or scaling delivery, our software team extension model ensures end-to-end ownership, speed, and flexibility",
+      "technologies_used": [],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/data-analytics-and-visualisation",
+      "source_url": "https://www.shurutech.com/services/engineering-team-extension",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:16",
-        "confidence": "high"
+        "extracted_at": "2025-10-17 23:41:56",
+        "confidence": "medium"
       }
     },
     {
@@ -622,48 +619,14 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/data-analytics-and-visualisation",
+      "source_url": "https://www.shurutech.com/services/product-engineering",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:16",
+        "extracted_at": "2025-10-17 23:41:57",
         "confidence": "high"
       }
     },
     {
       "id": 34,
-      "client_name": "Yoedi Hariadi Kurniawan",
-      "industry": "Automotive",
-      "challenge": "Problem description not found",
-      "solution": "by creating a MySQL high availability model, developing new document services, and leading our migration from PHP to Go",
-      "technologies_used": [
-        "Go",
-        "MySQL",
-        "PHP"
-      ],
-      "business_impact": "Results not specified",
-      "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/data-analytics-and-visualisation",
-      "metadata": {
-        "extracted_at": "2025-10-17 13:31:16",
-        "confidence": "high"
-      }
-    },
-    {
-      "id": 35,
-      "client_name": "Create Dashboard",
-      "industry": "Education",
-      "challenge": "Problem description not found",
-      "solution": "solutions bring to light key trends, patterns, and facts from raw data, helping executives plan the best course of action for the business",
-      "technologies_used": [],
-      "business_impact": "Results not specified",
-      "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/data-analytics-and-visualisation",
-      "metadata": {
-        "extracted_at": "2025-10-17 13:31:16",
-        "confidence": "medium"
-      }
-    },
-    {
-      "id": 36,
       "client_name": "Yoedi Hariadi Kurniawan",
       "industry": "Automotive",
       "challenge": "Problem description not found",
@@ -676,10 +639,46 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/api-development-integration",
+      "source_url": "https://www.shurutech.com/services/product-engineering",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:18",
+        "extracted_at": "2025-10-17 23:41:57",
         "confidence": "high"
+      }
+    },
+    {
+      "id": 35,
+      "client_name": "Yoedi Hariadi Kurniawan",
+      "industry": "Automotive",
+      "challenge": "Problem description not found",
+      "solution": "by creating a MySQL high availability model, developing new document services, and leading our migration from PHP to Go",
+      "technologies_used": [
+        "Go",
+        "MySQL",
+        "PHP"
+      ],
+      "business_impact": "Results not specified",
+      "project_duration": "Not specified",
+      "source_url": "https://www.shurutech.com/services/product-engineering",
+      "metadata": {
+        "extracted_at": "2025-10-17 23:41:57",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": 36,
+      "client_name": "Maintenance & Support",
+      "industry": "Media & Entertainment",
+      "challenge": "Problem description not found",
+      "solution": "solution into your existing environment and oversee a smooth, secure deployment for immediate operational impact",
+      "technologies_used": [
+        "AI"
+      ],
+      "business_impact": "Results not specified",
+      "project_duration": "Not specified",
+      "source_url": "https://www.shurutech.com/services/product-engineering",
+      "metadata": {
+        "extracted_at": "2025-10-17 23:41:57",
+        "confidence": "medium"
       }
     },
     {
@@ -696,14 +695,34 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/api-development-integration",
+      "source_url": "https://www.shurutech.com/services/tech-consulting",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:18",
+        "extracted_at": "2025-10-17 23:41:58",
         "confidence": "high"
       }
     },
     {
       "id": 38,
+      "client_name": "Yoedi Hariadi Kurniawan",
+      "industry": "Automotive",
+      "challenge": "Problem description not found",
+      "solution": "approach made the entire process seamless",
+      "technologies_used": [
+        "AI",
+        "Go",
+        "MySQL",
+        "PHP"
+      ],
+      "business_impact": "Results not specified",
+      "project_duration": "Not specified",
+      "source_url": "https://www.shurutech.com/services/tech-consulting",
+      "metadata": {
+        "extracted_at": "2025-10-17 23:41:58",
+        "confidence": "high"
+      }
+    },
+    {
+      "id": 39,
       "client_name": "Yoedi Hariadi Kurniawan",
       "industry": "Automotive",
       "challenge": "Problem description not found",
@@ -715,28 +734,9 @@
       ],
       "business_impact": "Results not specified",
       "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/api-development-integration",
+      "source_url": "https://www.shurutech.com/services/tech-consulting",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:18",
-        "confidence": "high"
-      }
-    },
-    {
-      "id": 39,
-      "client_name": "Custom API Development",
-      "industry": "Automotive",
-      "challenge": "Problem description not found",
-      "solution": "Solution description not found",
-      "technologies_used": [
-        "GraphQL",
-        "REST",
-        "gRPC"
-      ],
-      "business_impact": "Results not specified",
-      "project_duration": "Not specified",
-      "source_url": "https://www.shurutech.com/services/api-development-integration",
-      "metadata": {
-        "extracted_at": "2025-10-17 13:31:18",
+        "extracted_at": "2025-10-17 23:41:58",
         "confidence": "high"
       }
     },
@@ -751,7 +751,7 @@
       "project_duration": "Not specified",
       "source_url": "https://www.shurutech.com/about-us",
       "metadata": {
-        "extracted_at": "2025-10-17 13:31:19",
+        "extracted_at": "2025-10-17 23:42:00",
         "confidence": "medium"
       }
     }
@@ -885,135 +885,153 @@
     },
     {
       "name": "Our Offerings",
-      "description": "Access pre-vetted developers who integrate seamlessly into your workflows, boosting velocity without the overhead of full-time hiring.",
+      "description": "Delivering secure, scalable, and high-performance APIs that streamline operations, enable integrations, and drive digital transformation.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/engineering-team-extension"
+      "url": "https://www.shurutech.com/services/api-development-integration"
     },
     {
-      "name": "Staff Augmentation Solutions",
-      "description": "Access pre-vetted developers who integrate seamlessly into your workflows, boosting velocity without the overhead of full-time hiring.",
+      "name": "Custom API Development",
+      "description": "Delivering secure, scalable, and high-performance APIs that streamline operations, enable integrations, and drive digital transformation.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/engineering-team-extension"
+      "url": "https://www.shurutech.com/services/api-development-integration"
     },
     {
-      "name": "Technology Pods Solutions",
-      "description": "Ideal for fast-moving projects or scaling delivery, our software team extension model ensures end-to-end ownership, speed, and flexibility.",
+      "name": "Third-Party Integrations",
+      "description": "Connect your systems with third-party tools like CRMs, ERPs, and payment gateways, ensuring seamless data exchange and faster workflows.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/engineering-team-extension"
+      "url": "https://www.shurutech.com/services/api-development-integration"
     },
     {
-      "name": "Dedicated Development Teams",
-      "description": "Scale confidently with dedicated development teams that function as an extension of your in-house engineering.",
+      "name": "API Management",
+      "description": "Manage traffic, enable rate limiting, enforce authentication, and ensure consistent performance, powering secure access to your APIs.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/engineering-team-extension"
+      "url": "https://www.shurutech.com/services/api-development-integration"
     },
     {
-      "name": "QA & Testing Team Extension",
-      "description": "From manual to automated testing, our specialists ensure every release is stable and secure, without slowing down your development cycles.",
+      "name": "API Authentication",
+      "description": "Implement OAuth2, JWT, and encryption standards to safeguard your APIs, control access, and protect sensitive data.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/engineering-team-extension"
+      "url": "https://www.shurutech.com/services/api-development-integration"
     },
     {
-      "name": "Full-Stack Engineering Support",
-      "description": "Accelerate delivery with full-stack engineering support tailored to your tech stack with frontend polish to backend scalability.",
+      "name": "API Testing & Validation",
+      "description": "Ensure your APIs perform flawlessly, covering unit tests, integration tests, and stress tests with continuous monitoring for reliability.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/engineering-team-extension"
+      "url": "https://www.shurutech.com/services/api-development-integration"
     },
     {
-      "name": "Frontend & UI Engineering Support",
-      "description": "Our frontend engineers specialize in responsive design and performance optimization, ready to integrate via our software team extension model.",
+      "name": "API Documentation",
+      "description": "Get developer-friendly API documentation, helping teams integrate faster with sample code, test environments, and detailed specs.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/engineering-team-extension"
+      "url": "https://www.shurutech.com/services/api-development-integration"
     },
     {
-      "name": "API Development Support Services",
-      "description": "Our API developers bring expertise in cloud integrations and data security, delivered through flexible team extension services.",
+      "name": "API Frameworks",
+      "description": "No description available",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/engineering-team-extension"
+      "url": "https://www.shurutech.com/services/api-development-integration"
     },
     {
-      "name": "Expert IT Outsourcing Services",
-      "description": "We provide end-to-end tech talent, from infrastructure to development, so you can focus on business growth while we handle the delivery.",
+      "name": "Specs & Protocols",
+      "description": "No description available",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/engineering-team-extension"
+      "url": "https://www.shurutech.com/services/api-development-integration"
     },
     {
-      "name": "Hire Software Developers & Experts",
-      "description": "We match you with vetted talent across stacks and time zones, ready to join your team and contribute from day one with zero onboarding friction.",
+      "name": "Auth / Gateways",
+      "description": "No description available",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/engineering-team-extension"
+      "url": "https://www.shurutech.com/services/api-development-integration"
     },
     {
-      "name": "Tech Consulting Services",
-      "description": "We help you choose the right path, stack, and strategy for success.",
+      "name": "Testing & Automation",
+      "description": "No description available",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/tech-consulting"
+      "url": "https://www.shurutech.com/services/api-development-integration"
     },
     {
-      "name": "Our Offerings",
-      "description": "Our tech consulting services help businesses declutter technology to streamline and automate IT infrastructure, applications, and data.",
+      "name": "Cloud & DevOps Services",
+      "description": "Secure, efficient cloud architecture and DevOps practices that scale with your business.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/tech-consulting"
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
     },
     {
-      "name": "IT Consulting Services",
-      "description": "Our tech consulting services help businesses declutter technology to streamline and automate IT infrastructure, applications, and data.",
+      "name": "Our Cloud and Devops Offerings",
+      "description": "Design and build scalable, resilient cloud-native applications tailored to your business goals.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/tech-consulting"
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
     },
     {
-      "name": "Digital Transformation",
-      "description": "Get our technology consulting services to rethink processes, digitize operations, and build a culture of continuous innovation.",
+      "name": "Cloud Application Development",
+      "description": "Design and build scalable, resilient cloud-native applications tailored to your business goals.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/tech-consulting"
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
     },
     {
-      "name": "Cloud Consulting",
-      "description": "Our Cloud Consulting Services help you make smart decisions about cloud adoption, migration, and optimization for cost efficiency and business agility.",
+      "name": "Cloud Migration Services",
+      "description": "Migrate with confidence and minimal downtime using our Cloud and DevOps services.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/tech-consulting"
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
     },
     {
-      "name": "Software Consulting",
-      "description": "From System design and technical architecture to microservices, API-first architecture, and CI/CD pipeline integration, we do it all.",
+      "name": "Azure Devops",
+      "description": "Achieve faster release cycles with integrated planning and operations on Microsoft’s cloud platform.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/tech-consulting"
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
     },
     {
-      "name": "Enterprise IT Consulting",
-      "description": "Our Enterprise IT Consulting services provide the strategic insight and operational support to align IT environments with business goals.",
+      "name": "AWS Devops",
+      "description": "Optimize delivery workflows and reduce manual overhead across your AWS stack.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/tech-consulting"
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
     },
     {
-      "name": "Results Our Tech Consultancy Services Have Brought",
-      "description": "Bridging the gap between business and IT.",
+      "name": "Google Cloud DevOps",
+      "description": "Streamline development, testing, and deployment, combining Google's serverless technologies.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/tech-consulting"
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
     },
     {
-      "name": "Get Core Expertise",
-      "description": "We have software engineers, developers, UX/UI designers, AI experts, cybersecurity consultants, and more, who will help you navigate your business challenges.",
+      "name": "DevOps Services",
+      "description": "We deliver secure, scalable, and high-performing DevOps services tailored to your infrastructure needs.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/tech-consulting"
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
     },
     {
-      "name": "Save Time & Costs",
-      "description": "Stop wasting time hiring individual tech stack experts. Access our top 1% talent to fill the tech gap in your project faster and innovate rapidly.",
+      "name": "Cloud Data Platforms",
+      "description": "No description available",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/tech-consulting"
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
     },
     {
-      "name": "Take Better Decisions",
-      "description": "Leverage the expertise of our CTO, COO, and other tech experts to turn your business visions into value and make decisions confidently.",
+      "name": "CI/CD & Automation",
+      "description": "No description available",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/tech-consulting"
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
     },
     {
-      "name": "Mitigate Risks",
-      "description": "Identify and address potential risks before they impact your operations and prevent system failures, while also equipping yourself with a robust response plan.",
+      "name": "Containerization & Orchestration",
+      "description": "No description available",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/tech-consulting"
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
+    },
+    {
+      "name": "Infrastructure-as-Code",
+      "description": "No description available",
+      "capabilities": [],
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
+    },
+    {
+      "name": "Monitoring & Observability",
+      "description": "No description available",
+      "capabilities": [],
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
+    },
+    {
+      "name": "Why Choose Shuru as Your Cloud & DevOps Services Company?",
+      "description": "Shuru is a leading Cloud and DevOps service provider helping companies build quality software products faster, deploy in minutes, and set up an agile infrastructure to meet the growing demands. When you partner with us, you get a founder-curated team of experts with exceptional technical knowledge, experience working on complex projects, and high-grade work ethics. They quickly integrate into your working module, act like your own, and help you grow, scale, and succeed.",
+      "capabilities": [],
+      "url": "https://www.shurutech.com/services/cloud-and-devops"
     },
     {
       "name": "Custom SoftwareDevelopment Services",
@@ -1112,58 +1130,70 @@
       "url": "https://www.shurutech.com/services/custom-software-development"
     },
     {
-      "name": "Product Engineering Services",
-      "description": "Full-cycle product engineering that blends innovation with execution.",
+      "name": "Data Analytics & Visualization Services",
+      "description": "Analytics that uncover trends, spot risks, and drive smarterstrategies.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/product-engineering"
+      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
     },
     {
       "name": "Our Offerings",
-      "description": "Our product engineering services are dedicated to building custom apps and software products.",
+      "description": "Gather, clean, and analyze data from multiple sources to drive smarter decisions and optimize operations.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/product-engineering"
+      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
     },
     {
-      "name": "Product Development Services",
-      "description": "Our product engineering services are dedicated to building custom apps and software products.",
+      "name": "Data Analytics Services",
+      "description": "Gather, clean, and analyze data from multiple sources to drive smarter decisions and optimize operations.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/product-engineering"
+      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
     },
     {
-      "name": "Product Engineering Consulting",
-      "description": "We guide you to choose the best tech stack, product architecture, and modernization options.",
+      "name": "Data Visualization",
+      "description": "Turn complex information into intuitive dashboards to spot patterns and communicate insights with clarity.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/product-engineering"
+      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
     },
     {
-      "name": "Mobile Product Development",
-      "description": "Build apps with rich features, secure infrastructure, and high functionality tailored to your business needs.",
+      "name": "Business Intelligence (BI)",
+      "description": "Get a 360° view of your operations to identify your weak spots and make decisions backed by data.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/product-engineering"
+      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
     },
     {
-      "name": "Product Modernization Services",
-      "description": "Employ new-age technologies to re-engineer your product architecture, UX/UI, and database.",
+      "name": "Descriptive Analytics",
+      "description": "Track past performance and uncover the root causes of trends, so you’re always learning from your data and making better-informed decisions.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/product-engineering"
+      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
     },
     {
-      "name": "End-to-End Product Testing Services",
-      "description": "We ensure that every release is reliable, secure, and ready for real-world conditions.",
+      "name": "Predictive Analytics",
+      "description": "Forecast outcomes, spot risks, and seize opportunities, so your business is always prepared for what’s next, not just reacting to what’s now.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/product-engineering"
+      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
     },
     {
-      "name": "Product Maintenance & Support",
-      "description": "Keep your product performing, improving, and evolving long after go-live.",
+      "name": "Warehouses & Data Lakes",
+      "description": "No description available",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/product-engineering"
+      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
     },
     {
-      "name": "Why Choose Shuru as Your Product Engineering Services Company?",
-      "description": "We are a product engineering services company that doesn’t just write code. We own the accountability from product ideation to prototyping, development, and deployment, till you get what you expected. Shuru is led by founders who handpick your team, focusing not just on job roles but also on expertise, experience, and work ethic, so you get a tech team that works like your own.",
+      "name": "ETL/Orchestration",
+      "description": "No description available",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/product-engineering"
+      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
+    },
+    {
+      "name": "Visualisation Libraries",
+      "description": "No description available",
+      "capabilities": [],
+      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
+    },
+    {
+      "name": "Dashboards & Observability",
+      "description": "No description available",
+      "capabilities": [],
+      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
     },
     {
       "name": "Data Engineering Services",
@@ -1232,220 +1262,190 @@
       "url": "https://www.shurutech.com/services/data-engineering"
     },
     {
-      "name": "Cloud & DevOps Services",
-      "description": "Secure, efficient cloud architecture and DevOps practices that scale with your business.",
+      "name": "Our Offerings",
+      "description": "Access pre-vetted developers who integrate seamlessly into your workflows, boosting velocity without the overhead of full-time hiring.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
+      "url": "https://www.shurutech.com/services/engineering-team-extension"
     },
     {
-      "name": "Our Cloud and Devops Offerings",
-      "description": "Design and build scalable, resilient cloud-native applications tailored to your business goals.",
+      "name": "Staff Augmentation Solutions",
+      "description": "Access pre-vetted developers who integrate seamlessly into your workflows, boosting velocity without the overhead of full-time hiring.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
+      "url": "https://www.shurutech.com/services/engineering-team-extension"
     },
     {
-      "name": "Cloud Application Development",
-      "description": "Design and build scalable, resilient cloud-native applications tailored to your business goals.",
+      "name": "Technology Pods Solutions",
+      "description": "Ideal for fast-moving projects or scaling delivery, our software team extension model ensures end-to-end ownership, speed, and flexibility.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
+      "url": "https://www.shurutech.com/services/engineering-team-extension"
     },
     {
-      "name": "Cloud Migration Services",
-      "description": "Migrate with confidence and minimal downtime using our Cloud and DevOps services.",
+      "name": "Dedicated Development Teams",
+      "description": "Scale confidently with dedicated development teams that function as an extension of your in-house engineering.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
+      "url": "https://www.shurutech.com/services/engineering-team-extension"
     },
     {
-      "name": "Azure Devops",
-      "description": "Achieve faster release cycles with integrated planning and operations on Microsoft’s cloud platform.",
+      "name": "QA & Testing Team Extension",
+      "description": "From manual to automated testing, our specialists ensure every release is stable and secure, without slowing down your development cycles.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
+      "url": "https://www.shurutech.com/services/engineering-team-extension"
     },
     {
-      "name": "AWS Devops",
-      "description": "Optimize delivery workflows and reduce manual overhead across your AWS stack.",
+      "name": "Full-Stack Engineering Support",
+      "description": "Accelerate delivery with full-stack engineering support tailored to your tech stack with frontend polish to backend scalability.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
+      "url": "https://www.shurutech.com/services/engineering-team-extension"
     },
     {
-      "name": "Google Cloud DevOps",
-      "description": "Streamline development, testing, and deployment, combining Google's serverless technologies.",
+      "name": "Frontend & UI Engineering Support",
+      "description": "Our frontend engineers specialize in responsive design and performance optimization, ready to integrate via our software team extension model.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
+      "url": "https://www.shurutech.com/services/engineering-team-extension"
     },
     {
-      "name": "DevOps Services",
-      "description": "We deliver secure, scalable, and high-performing DevOps services tailored to your infrastructure needs.",
+      "name": "API Development Support Services",
+      "description": "Our API developers bring expertise in cloud integrations and data security, delivered through flexible team extension services.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
+      "url": "https://www.shurutech.com/services/engineering-team-extension"
     },
     {
-      "name": "Cloud Data Platforms",
-      "description": "No description available",
+      "name": "Expert IT Outsourcing Services",
+      "description": "We provide end-to-end tech talent, from infrastructure to development, so you can focus on business growth while we handle the delivery.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
+      "url": "https://www.shurutech.com/services/engineering-team-extension"
     },
     {
-      "name": "CI/CD & Automation",
-      "description": "No description available",
+      "name": "Hire Software Developers & Experts",
+      "description": "We match you with vetted talent across stacks and time zones, ready to join your team and contribute from day one with zero onboarding friction.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
+      "url": "https://www.shurutech.com/services/engineering-team-extension"
     },
     {
-      "name": "Containerization & Orchestration",
-      "description": "No description available",
+      "name": "Product Engineering Services",
+      "description": "Full-cycle product engineering that blends innovation with execution.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
-    },
-    {
-      "name": "Infrastructure-as-Code",
-      "description": "No description available",
-      "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
-    },
-    {
-      "name": "Monitoring & Observability",
-      "description": "No description available",
-      "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
-    },
-    {
-      "name": "Why Choose Shuru as Your Cloud & DevOps Services Company?",
-      "description": "Shuru is a leading Cloud and DevOps service provider helping companies build quality software products faster, deploy in minutes, and set up an agile infrastructure to meet the growing demands. When you partner with us, you get a founder-curated team of experts with exceptional technical knowledge, experience working on complex projects, and high-grade work ethics. They quickly integrate into your working module, act like your own, and help you grow, scale, and succeed.",
-      "capabilities": [],
-      "url": "https://www.shurutech.com/services/cloud-and-devops"
-    },
-    {
-      "name": "Data Analytics & Visualization Services",
-      "description": "Analytics that uncover trends, spot risks, and drive smarterstrategies.",
-      "capabilities": [],
-      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
+      "url": "https://www.shurutech.com/services/product-engineering"
     },
     {
       "name": "Our Offerings",
-      "description": "Gather, clean, and analyze data from multiple sources to drive smarter decisions and optimize operations.",
+      "description": "Our product engineering services are dedicated to building custom apps and software products.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
+      "url": "https://www.shurutech.com/services/product-engineering"
     },
     {
-      "name": "Data Analytics Services",
-      "description": "Gather, clean, and analyze data from multiple sources to drive smarter decisions and optimize operations.",
+      "name": "Product Development Services",
+      "description": "Our product engineering services are dedicated to building custom apps and software products.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
+      "url": "https://www.shurutech.com/services/product-engineering"
     },
     {
-      "name": "Data Visualization",
-      "description": "Turn complex information into intuitive dashboards to spot patterns and communicate insights with clarity.",
+      "name": "Product Engineering Consulting",
+      "description": "We guide you to choose the best tech stack, product architecture, and modernization options.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
+      "url": "https://www.shurutech.com/services/product-engineering"
     },
     {
-      "name": "Business Intelligence (BI)",
-      "description": "Get a 360° view of your operations to identify your weak spots and make decisions backed by data.",
+      "name": "Mobile Product Development",
+      "description": "Build apps with rich features, secure infrastructure, and high functionality tailored to your business needs.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
+      "url": "https://www.shurutech.com/services/product-engineering"
     },
     {
-      "name": "Descriptive Analytics",
-      "description": "Track past performance and uncover the root causes of trends, so you’re always learning from your data and making better-informed decisions.",
+      "name": "Product Modernization Services",
+      "description": "Employ new-age technologies to re-engineer your product architecture, UX/UI, and database.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
+      "url": "https://www.shurutech.com/services/product-engineering"
     },
     {
-      "name": "Predictive Analytics",
-      "description": "Forecast outcomes, spot risks, and seize opportunities, so your business is always prepared for what’s next, not just reacting to what’s now.",
+      "name": "End-to-End Product Testing Services",
+      "description": "We ensure that every release is reliable, secure, and ready for real-world conditions.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
+      "url": "https://www.shurutech.com/services/product-engineering"
     },
     {
-      "name": "Warehouses & Data Lakes",
-      "description": "No description available",
+      "name": "Product Maintenance & Support",
+      "description": "Keep your product performing, improving, and evolving long after go-live.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
+      "url": "https://www.shurutech.com/services/product-engineering"
     },
     {
-      "name": "ETL/Orchestration",
-      "description": "No description available",
+      "name": "Why Choose Shuru as Your Product Engineering Services Company?",
+      "description": "We are a product engineering services company that doesn’t just write code. We own the accountability from product ideation to prototyping, development, and deployment, till you get what you expected. Shuru is led by founders who handpick your team, focusing not just on job roles but also on expertise, experience, and work ethic, so you get a tech team that works like your own.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
+      "url": "https://www.shurutech.com/services/product-engineering"
     },
     {
-      "name": "Visualisation Libraries",
-      "description": "No description available",
+      "name": "Tech Consulting Services",
+      "description": "We help you choose the right path, stack, and strategy for success.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
-    },
-    {
-      "name": "Dashboards & Observability",
-      "description": "No description available",
-      "capabilities": [],
-      "url": "https://www.shurutech.com/services/data-analytics-and-visualisation"
+      "url": "https://www.shurutech.com/services/tech-consulting"
     },
     {
       "name": "Our Offerings",
-      "description": "Delivering secure, scalable, and high-performance APIs that streamline operations, enable integrations, and drive digital transformation.",
+      "description": "Our tech consulting services help businesses declutter technology to streamline and automate IT infrastructure, applications, and data.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/api-development-integration"
+      "url": "https://www.shurutech.com/services/tech-consulting"
     },
     {
-      "name": "Custom API Development",
-      "description": "Delivering secure, scalable, and high-performance APIs that streamline operations, enable integrations, and drive digital transformation.",
+      "name": "IT Consulting Services",
+      "description": "Our tech consulting services help businesses declutter technology to streamline and automate IT infrastructure, applications, and data.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/api-development-integration"
+      "url": "https://www.shurutech.com/services/tech-consulting"
     },
     {
-      "name": "Third-Party Integrations",
-      "description": "Connect your systems with third-party tools like CRMs, ERPs, and payment gateways, ensuring seamless data exchange and faster workflows.",
+      "name": "Digital Transformation",
+      "description": "Get our technology consulting services to rethink processes, digitize operations, and build a culture of continuous innovation.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/api-development-integration"
+      "url": "https://www.shurutech.com/services/tech-consulting"
     },
     {
-      "name": "API Management",
-      "description": "Manage traffic, enable rate limiting, enforce authentication, and ensure consistent performance, powering secure access to your APIs.",
+      "name": "Cloud Consulting",
+      "description": "Our Cloud Consulting Services help you make smart decisions about cloud adoption, migration, and optimization for cost efficiency and business agility.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/api-development-integration"
+      "url": "https://www.shurutech.com/services/tech-consulting"
     },
     {
-      "name": "API Authentication",
-      "description": "Implement OAuth2, JWT, and encryption standards to safeguard your APIs, control access, and protect sensitive data.",
+      "name": "Software Consulting",
+      "description": "From System design and technical architecture to microservices, API-first architecture, and CI/CD pipeline integration, we do it all.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/api-development-integration"
+      "url": "https://www.shurutech.com/services/tech-consulting"
     },
     {
-      "name": "API Testing & Validation",
-      "description": "Ensure your APIs perform flawlessly, covering unit tests, integration tests, and stress tests with continuous monitoring for reliability.",
+      "name": "Enterprise IT Consulting",
+      "description": "Our Enterprise IT Consulting services provide the strategic insight and operational support to align IT environments with business goals.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/api-development-integration"
+      "url": "https://www.shurutech.com/services/tech-consulting"
     },
     {
-      "name": "API Documentation",
-      "description": "Get developer-friendly API documentation, helping teams integrate faster with sample code, test environments, and detailed specs.",
+      "name": "Results Our Tech Consultancy Services Have Brought",
+      "description": "Bridging the gap between business and IT.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/api-development-integration"
+      "url": "https://www.shurutech.com/services/tech-consulting"
     },
     {
-      "name": "API Frameworks",
-      "description": "No description available",
+      "name": "Get Core Expertise",
+      "description": "We have software engineers, developers, UX/UI designers, AI experts, cybersecurity consultants, and more, who will help you navigate your business challenges.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/api-development-integration"
+      "url": "https://www.shurutech.com/services/tech-consulting"
     },
     {
-      "name": "Specs & Protocols",
-      "description": "No description available",
+      "name": "Save Time & Costs",
+      "description": "Stop wasting time hiring individual tech stack experts. Access our top 1% talent to fill the tech gap in your project faster and innovate rapidly.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/api-development-integration"
+      "url": "https://www.shurutech.com/services/tech-consulting"
     },
     {
-      "name": "Auth / Gateways",
-      "description": "No description available",
+      "name": "Take Better Decisions",
+      "description": "Leverage the expertise of our CTO, COO, and other tech experts to turn your business visions into value and make decisions confidently.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/api-development-integration"
+      "url": "https://www.shurutech.com/services/tech-consulting"
     },
     {
-      "name": "Testing & Automation",
-      "description": "No description available",
+      "name": "Mitigate Risks",
+      "description": "Identify and address potential risks before they impact your operations and prevent system failures, while also equipping yourself with a robust response plan.",
       "capabilities": [],
-      "url": "https://www.shurutech.com/services/api-development-integration"
+      "url": "https://www.shurutech.com/services/tech-consulting"
     },
     {
       "name": "Founders-Led Expertise",
@@ -1519,27 +1519,51 @@
     "PyTorch",
     "TensorFlow",
     "Terraform",
+    "CloudFlare",
+    "Cypress",
+    "FastAPI",
+    "Firebase",
+    "Flask",
+    "GraphQL",
+    "JUnit",
+    "LESS",
+    "Laravel",
+    "OpenAPI",
+    "Postman",
+    "REST",
+    "Rails",
+    "Ruby",
+    "Ruby on Rails",
+    "Swagger",
+    "gRPC",
+    "AWS",
+    "Ansible",
+    "Azure DevOps",
+    "Bamboo",
+    "Bitbucket",
     "CI/CD",
-    "Microservices",
+    "CircleCI",
+    "Continuous Integration",
+    "GitHub",
+    "GitHub Actions",
+    "GitLab",
+    "GitLab CI",
+    "GitLab CI/CD",
+    "Jenkins",
+    "OpenShift",
+    "Podman",
+    "Serverless",
     "Android",
     "Angular",
     "Django",
     "Elasticsearch",
-    "FastAPI",
-    "Firebase",
     "Flutter",
-    "GitHub",
-    "GitHub Actions",
     "Java",
-    "Jenkins",
     "Kotlin",
     "PostgreSQL",
     "Python",
-    "Rails",
     "React",
     "Redis",
-    "Ruby",
-    "Ruby on Rails",
     "Rust",
     "Swift",
     "SwiftUI",
@@ -1547,41 +1571,18 @@
     "TypeScript",
     "iOS",
     "Next.js",
-    "OpenShift",
-    "Podman",
     "React Native",
-    "AWS",
-    "Ansible",
-    "Azure DevOps",
-    "Bamboo",
-    "Bitbucket",
-    "CircleCI",
-    "Continuous Integration",
-    "GitLab",
-    "GitLab CI",
-    "GitLab CI/CD",
-    "LESS",
-    "Serverless",
-    "CloudFlare",
-    "Cypress",
-    "Flask",
-    "GraphQL",
-    "JUnit",
-    "Laravel",
-    "OpenAPI",
-    "Postman",
-    "REST",
-    "Swagger",
-    "gRPC"
+    "Microservices"
   ],
   "industries": [
     "Automotive",
     "Construction",
+    "Manufacturing",
+    "Media & Entertainment",
     "Energy",
     "Gaming",
     "HR Tech",
     "Logistics",
-    "Manufacturing",
     "SaaS",
     "AgriTech",
     "E-commerce",
@@ -1589,7 +1590,6 @@
     "FinTech",
     "Healthcare",
     "Insurance",
-    "Media & Entertainment",
     "Non-profit",
     "Real Estate",
     "Retail",

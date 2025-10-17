@@ -338,7 +338,15 @@ class AdvancedShuruTechScraper:
 
     # Priority URL keywords
     PRIORITY_KEYWORDS = ['work', 'case', 'project', 'portfolio', 'client', 'about',
-                         'service', 'solution', 'story', 'testimonial']
+                         'service', 'solution', 'story', 'testimonial', 'insights', 
+                         'blog', 'case-study']
+
+    # Priority seed URLs to scrape first
+    PRIORITY_SEED_URLS = [
+        'https://www.shurutech.com/work',
+        'https://www.shurutech.com/insights',
+        'https://www.shurutech.com/insights?category=Case+Study'
+    ]
 
     def __init__(self, base_url='https://www.shurutech.com/', max_pages=30, max_depth=3):
         self.base_url = base_url
@@ -357,11 +365,18 @@ class AdvancedShuruTechScraper:
         self.robot_parser = RobotFileParser()
         self.case_study_id_counter = 1
 
+        # Prepend priority seed URLs to queue (they'll be scraped first)
+        for priority_url in reversed(self.PRIORITY_SEED_URLS):
+            self.url_queue.appendleft((priority_url, 0))
+        
         logger.info("=" * 70)
         logger.info("Advanced Shuru Tech Scraper Initialized")
         logger.info(f"Base URL: {base_url}")
         logger.info(f"Max Pages: {max_pages}")
         logger.info(f"Max Depth: {max_depth}")
+        logger.info(f"Priority Seed URLs: {len(self.PRIORITY_SEED_URLS)}")
+        for url in self.PRIORITY_SEED_URLS:
+            logger.info(f"  - {url}")
         logger.info("=" * 70)
 
     def check_robots_txt(self):
@@ -542,14 +557,35 @@ class AdvancedShuruTechScraper:
         logger.info("Extracting case studies using advanced methods...")
         case_studies = []
 
+        # Check if this is an insights/case study detail page
+        is_case_study_detail = '/insights/case-study/' in url.lower()
+        if is_case_study_detail:
+            logger.info("  Detected CASE STUDY DETAIL page - using enhanced extraction")
+
         # Strategy 1: Semantic HTML extraction
         semantic_blocks = self.extract_semantic_content(soup)
 
         # Strategy 2: Card layout extraction
         card_blocks = self.extract_card_layouts(soup)
 
+        # Strategy 3: Article-based extraction for insights pages
+        article_blocks = []
+        if is_case_study_detail or '/insights' in url.lower():
+            logger.info("  Extracting from article/blog post structure...")
+            articles = soup.find_all(['article', 'main'])
+            for article in articles:
+                text = article.get_text(separator=' ', strip=True)
+                if len(text) > 200:  # Meaningful article content
+                    article_blocks.append({
+                        'tag': 'article',
+                        'classes': ' '.join(article.get('class', [])),
+                        'text': text,
+                        'element': article
+                    })
+                    logger.info(f"    Found article block with {len(text)} chars")
+
         # Combine all content blocks
-        all_blocks = semantic_blocks + card_blocks
+        all_blocks = semantic_blocks + card_blocks + article_blocks
 
         for block in all_blocks:
             text = block.get('text', '')
@@ -751,8 +787,18 @@ class AdvancedShuruTechScraper:
         score = 0
         url_lower = url.lower()
 
+        # Maximum priority for case study detail pages
+        if '/insights/case-study/' in url_lower:
+            score += 100
+            logger.info(f"  MAXIMUM priority case study page: {url}")
+        
+        # Very high priority for insights pages
+        elif '/insights' in url_lower:
+            score += 50
+            logger.info(f"  Very high priority insights page: {url}")
+
         # High priority for service pages
-        if 'service' in url_lower:
+        elif 'service' in url_lower:
             score += 20
             logger.info(f"  High priority service page: {url}")
 
@@ -907,8 +953,12 @@ class AdvancedShuruTechScraper:
                 # Only follow internal links
                 if urlparse(full_url).netloc == urlparse(self.base_url).netloc:
                     if full_url not in self.visited_urls:
-                        # Remove fragment and query for deduplication
-                        clean_url = full_url.split('#')[0].split('?')[0]
+                        # Remove fragment but preserve query params for insights pages
+                        clean_url = full_url.split('#')[0]
+                        
+                        # For non-insights pages, remove query params for deduplication
+                        if '/insights' not in clean_url.lower():
+                            clean_url = clean_url.split('?')[0]
 
                         if clean_url not in self.visited_urls:
                             score = self.prioritize_url(clean_url)

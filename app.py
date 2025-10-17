@@ -323,21 +323,23 @@ def main():
     """Main application function"""
     from ui_components import (
         inject_dashboard_styles,
+        display_dark_header,
+        display_dark_greeting,
+        display_dark_prompts,
         display_case_study_item,
         display_panel_header,
         display_dashboard_header,
-        display_sales_cta,
-        display_chat_prompts
+        display_sales_cta
     )
     
-    # Inject modern dashboard styles
+    # Inject dark ChatGPT-style styles
     inject_dashboard_styles()
     
-    # Display dashboard header
-    display_dashboard_header(
-        "🤖 ShuruMan",
-        "Have business questions? We already have answers"
-    )
+    # Display simplified header with Shuru logo only
+    display_dark_header()
+    
+    # Display centered greeting
+    display_dark_greeting()
 
     # Initialize bot in session state
     if 'bot' not in st.session_state:
@@ -354,16 +356,19 @@ def main():
     
     # Show prompts if chat is empty
     if not st.session_state.messages:
-        display_chat_prompts()
+        display_dark_prompts()
     
-    # Display all messages
-    for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
-            
-            # Show CTA after assistant messages
-            if message["role"] == "assistant":
-                display_sales_cta()
+    # Display all messages in a scrollable container
+    if st.session_state.messages:
+        st.markdown('<div class="chat-messages-container">', unsafe_allow_html=True)
+        for message in st.session_state.messages:
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
+                
+                # Show CTA after assistant messages
+                if message["role"] == "assistant":
+                    display_sales_cta()
+        st.markdown('</div>', unsafe_allow_html=True)
     
     # Chat input at bottom (full width, outside any columns)
     prompt = st.chat_input("Type your business question...")

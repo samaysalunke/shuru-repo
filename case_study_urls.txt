@@ -1,0 +1,9 @@
+# Shuru Tech Case Study URLs
+# One URL per line, lines starting with # are comments
+
+# Pickup Coffee Case Study
+https://shurutech.com/insights/case-study/the-engineering-behind-pickup-coffees-record-breaking-7x-growth
+
+# Paper.id Case Study
+https://www.shurutech.com/insights/case-study/how-shuru-scaled-paperids-fintech-platform
+
