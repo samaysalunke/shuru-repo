@@ -323,10 +323,8 @@ def main():
     """Main application function"""
     from ui_components import (
         inject_dashboard_styles,
-        display_metric_card,
         display_case_study_item,
         display_panel_header,
-        display_status_badge,
         display_dashboard_header
     )
     
