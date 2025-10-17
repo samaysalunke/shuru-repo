@@ -326,7 +326,8 @@ def main():
         display_case_study_item,
         display_panel_header,
         display_dashboard_header,
-        display_sales_cta
+        display_sales_cta,
+        display_chat_prompts
     )
     
     # Inject modern dashboard styles
@@ -350,6 +351,11 @@ def main():
     # ==========================================
     # CHAT AREA (Full Width)
     # ==========================================
+    
+    # Show prompts if chat is empty
+    if not st.session_state.messages:
+        display_chat_prompts()
+    
     # Display all messages
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
@@ -361,6 +367,11 @@ def main():
     
     # Chat input at bottom (full width, outside any columns)
     prompt = st.chat_input("Type your business question...")
+    
+    # Handle selected prompt
+    if "selected_prompt" in st.session_state:
+        prompt = st.session_state.selected_prompt
+        del st.session_state.selected_prompt
     
     # ==========================================
     # MESSAGE PROCESSING (Simplified)

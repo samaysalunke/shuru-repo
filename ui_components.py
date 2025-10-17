@@ -99,11 +99,11 @@ def inject_dashboard_styles():
     [data-testid="stChatMessage"] {
         background: white;
         border: 1px solid #E5E7EB;
-        border-radius: 12px;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        animation: fadeIn 0.3s ease-in;
+        border-radius: 16px;
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 8px rgba(41, 31, 59, 0.08);
+        animation: fadeIn 0.4s ease-in;
     }
 
     @keyframes fadeIn {
@@ -172,44 +172,50 @@ def inject_dashboard_styles():
     
     /* Header styles - Shuru Tech Brand */
     .dashboard-header {
-        background: #FFFFFF;
-        border-bottom: 2px solid #F1F5F9;
-        padding: 1.5rem 2rem;
-        margin: -2rem -2rem 2rem -2rem;
+        background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
+        border-bottom: 3px solid #291f3b;
+        padding: 2rem 2.5rem;
+        margin: -2rem -2rem 2.5rem -2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 0 2px 8px rgba(41, 31, 59, 0.08);
+        box-shadow: 0 4px 20px rgba(41, 31, 59, 0.12);
+        border-radius: 0 0 16px 16px;
     }
     
     .header-left {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
     }
     
     .dashboard-logo {
-        height: 40px;
+        height: 48px;
         vertical-align: middle;
+        filter: drop-shadow(0 2px 4px rgba(41, 31, 59, 0.1));
     }
     
     .header-content {
         display: flex;
         flex-direction: column;
+        gap: 0.25rem;
     }
     
     .dashboard-title {
-        font-size: 1.75rem;
-        font-weight: 700;
+        font-size: 2rem;
+        font-weight: 800;
         color: #291f3b;
         margin: 0;
+        letter-spacing: -0.5px;
+        text-shadow: 0 1px 2px rgba(41, 31, 59, 0.1);
     }
     
     .dashboard-subtitle {
-        font-size: 0.95rem;
+        font-size: 1rem;
         color: #64748B;
-        margin: 0.25rem 0 0 0;
-        font-weight: 400;
+        margin: 0;
+        font-weight: 500;
+        line-height: 1.4;
     }
     
     /* Panel headers */
@@ -266,6 +272,61 @@ def inject_dashboard_styles():
         border-color: #291f3b !important;
         box-shadow: 0 0 0 3px rgba(41, 31, 59, 0.1) !important;
         outline: none !important;
+    }
+
+    /* Clickable prompts styling */
+    .prompt-section {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%);
+        border-radius: 20px;
+        margin: 2rem 0;
+        border: 2px solid #F1F5F9;
+    }
+
+    .prompt-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #291f3b;
+        margin-bottom: 0.5rem;
+    }
+
+    .prompt-subtitle {
+        font-size: 1rem;
+        color: #64748B;
+        margin-bottom: 2rem;
+        font-weight: 500;
+    }
+
+    .prompt-button {
+        background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
+        border: 2px solid #E2E8F0;
+        border-radius: 16px;
+        padding: 1.25rem 1.5rem;
+        margin: 0.5rem 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(41, 31, 59, 0.08);
+        text-align: left;
+        width: 100%;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #291f3b;
+        line-height: 1.4;
+    }
+
+    .prompt-button:hover {
+        border-color: #291f3b;
+        background: linear-gradient(135deg, #291f3b 0%, #3d2f5a 100%);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(41, 31, 59, 0.2);
+    }
+
+    .prompt-icon {
+        font-size: 1.25rem;
+        margin-right: 0.75rem;
+        vertical-align: middle;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -346,4 +407,33 @@ def display_sales_cta():
     </div>
     """
     st.markdown(html, unsafe_allow_html=True)
+
+
+def display_chat_prompts():
+    """Display clickable prompts when chat is empty"""
+    html = f"""
+    <div class="prompt-section">
+        <h2 class="prompt-title">👋 How can I help you today?</h2>
+        <p class="prompt-subtitle">Choose a prompt to get started with Shuru Tech's AI assistant</p>
+    </div>
+    """
+    st.markdown(html, unsafe_allow_html=True)
+    
+    # Create three columns for the prompts
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        if st.button("🚀 What services does Shuru Tech offer?", key="prompt1", use_container_width=True):
+            st.session_state.selected_prompt = "What services does Shuru Tech offer?"
+            st.rerun()
+    
+    with col2:
+        if st.button("🤖 How can AI transform my business operations?", key="prompt2", use_container_width=True):
+            st.session_state.selected_prompt = "How can AI transform my business operations?"
+            st.rerun()
+    
+    with col3:
+        if st.button("💬 Tell me about your RAG chatbot capabilities", key="prompt3", use_container_width=True):
+            st.session_state.selected_prompt = "Tell me about your RAG chatbot capabilities"
+            st.rerun()
 
