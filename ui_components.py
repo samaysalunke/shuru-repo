@@ -236,7 +236,7 @@ def inject_dashboard_styles():
         margin: 0 auto;
     }
     
-    /* Main content area - prevent scrolling */
+    /* Main content area - reduced padding for viewport fit */
     .main-content {
         background: #ffffff;
         height: calc(100vh - 180px);
@@ -244,11 +244,23 @@ def inject_dashboard_styles():
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        padding: 2rem;
+        padding: 1rem;
         overflow: hidden;
     }
     
-    /* Chat messages container - scrollable within main content */
+    /* Answer container for chat state */
+    .answer-container {
+        background: #ffffff;
+        height: calc(100vh - 180px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1rem;
+        overflow: hidden;
+    }
+    
+    /* Chat messages container - scrollable within answer container */
     .chat-messages-container {
         width: 100%;
         max-width: 800px;
@@ -504,7 +516,13 @@ def inject_dashboard_styles():
         }
         
         .main-content {
-            padding: 1rem;
+            padding: 0.75rem;
+            height: calc(100vh - 100px);
+            background: #ffffff;
+        }
+        
+        .answer-container {
+            padding: 0.75rem;
             height: calc(100vh - 100px);
             background: #ffffff;
         }

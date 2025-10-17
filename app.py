@@ -338,9 +338,6 @@ def main():
     # Display simplified header with Shuru logo only
     display_dark_header()
     
-    # Display centered greeting
-    display_dark_greeting()
-
     # Initialize bot in session state
     if 'bot' not in st.session_state:
         with st.spinner("Initializing chatbot..."):
@@ -351,15 +348,21 @@ def main():
         st.session_state.messages = []
     
     # ==========================================
-    # CHAT AREA (Full Width)
+    # CONDITIONAL CONTENT DISPLAY
     # ==========================================
     
     # Show prompts if chat is empty
     if not st.session_state.messages:
+        # Display centered greeting
+        display_dark_greeting()
+        
+        # Display prompt buttons below greeting
         display_dark_prompts()
-    
-    # Display all messages in a scrollable container
-    if st.session_state.messages:
+    else:
+        # When chat is active, show answer container instead of main-content
+        st.markdown('<div class="answer-container">', unsafe_allow_html=True)
+        
+        # Display all messages in a scrollable container
         st.markdown('<div class="chat-messages-container">', unsafe_allow_html=True)
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
@@ -368,6 +371,7 @@ def main():
                 # Show CTA after assistant messages
                 if message["role"] == "assistant":
                     display_sales_cta()
+        st.markdown('</div>', unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
     
     # Chat input at bottom (full width, outside any columns)
