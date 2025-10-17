@@ -355,72 +355,8 @@ def main():
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
             
-            # Show sources if assistant message
-            if message["role"] == "assistant" and message.get("sources"):
-                st.markdown('<hr style="margin: 2rem 0; border-top: 2px solid #E5E7EB;">', unsafe_allow_html=True)
-                st.markdown("### 📚 Related Case Studies")
-                
-                # Display case studies (existing code)
-                sources = message["sources"]
-                case_studies = []
-                
-                for source in sources:
-                    if source.metadata.get('type') == 'case_study':
-                        client_name = source.metadata.get('client_name', 'Unknown')
-                        if not any(cs.metadata.get('client_name') == client_name for cs in case_studies):
-                            case_studies.append(source)
-                
-                if case_studies:
-                    for source in case_studies:
-                        client_name = source.metadata.get('client_name', 'Unknown')
-                        industry = source.metadata.get('industry', 'N/A')
-                        
-                        with st.expander(f"🔹 **{client_name}** - {industry}"):
-                            content = source.page_content
-                            
-                            # Parse sections (existing code)
-                            sections = {}
-                            current_section = None
-                            current_content = []
-                            
-                            for line in content.split('\n'):
-                                line = line.strip()
-                                if line.endswith(':') and line[:-1] in ['Problem', 'Solution', 'Results', 'Technologies Used', 'Duration']:
-                                    if current_section:
-                                        sections[current_section] = '\n'.join(current_content).strip()
-                                    current_section = line[:-1]
-                                    current_content = []
-                                elif line and current_section:
-                                    current_content.append(line)
-                            
-                            if current_section:
-                                sections[current_section] = '\n'.join(current_content).strip()
-                            
-                            # Display sections
-                            if 'Problem' in sections:
-                                st.markdown(f"**Problem:**")
-                                st.markdown(sections['Problem'])
-                                st.markdown("")
-                            
-                            if 'Solution' in sections:
-                                st.markdown(f"**Solution:**")
-                                st.markdown(sections['Solution'])
-                                st.markdown("")
-                            
-                            if 'Technologies Used' in sections:
-                                st.markdown(f"**Technologies Used:**")
-                                st.markdown(sections['Technologies Used'])
-                                st.markdown("")
-                            
-                            if 'Results' in sections:
-                                st.markdown(f"**Results:**")
-                                st.markdown(sections['Results'])
-                                st.markdown("")
-                            
-                            if 'Duration' in sections:
-                                st.markdown(f"**Duration:** {sections['Duration']}")
-                
-                # Add CTA after sources
+            # Show CTA after assistant messages
+            if message["role"] == "assistant":
                 display_sales_cta()
     
     # Chat input at bottom (full width, outside any columns)
