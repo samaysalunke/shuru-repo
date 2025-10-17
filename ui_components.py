@@ -94,7 +94,7 @@ def inject_dashboard_styles():
         color: #6B7280;
     }
     
-    /* Chat area improvements */
+    /* Chat messages - better spacing */
     [data-testid="stChatMessage"] {
         background: white;
         border: 1px solid #E5E7EB;
@@ -102,14 +102,54 @@ def inject_dashboard_styles():
         padding: 1rem;
         margin-bottom: 1rem;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        animation: fadeIn 0.3s ease-in;
     }
-    
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* User messages */
     [data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) {
         border-left: 3px solid #3B82F6;
+        background: #F9FAFB;
     }
-    
+
+    /* Assistant messages */
     [data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-assistant"]) {
         border-left: 3px solid #10B981;
+    }
+
+    /* Input placeholder text */
+    [data-testid="stChatInput"] input::placeholder {
+        color: #9CA3AF !important;
+        font-style: italic;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #F3F4F6;
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #D1D5DB;
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #9CA3AF;
     }
     
     /* Expander styling */
@@ -171,15 +211,36 @@ def inject_dashboard_styles():
         padding-bottom: 1rem;
     }
     
-    /* Chat input - sticky at bottom */
+    /* Make chat column fill height */
+    [data-testid="column"]:first-child {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 180px);
+    }
+
+    /* Chat input - force to bottom */
     [data-testid="stChatInput"] {
-        position: sticky;
-        bottom: 0;
+        position: sticky !important;
+        bottom: 0 !important;
         background: white;
         padding: 1rem 0;
-        margin-top: 1rem;
-        z-index: 100;
-        border-top: 1px solid #E5E7EB;
+        margin-top: auto !important;  /* Push to bottom */
+        z-index: 1000;
+        border-top: 2px solid #E5E7EB;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Messages container - scrollable */
+    .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding-bottom: 1rem;
+        scroll-behavior: smooth;
+    }
+
+    /* Auto-scroll to bottom when new message */
+    .chat-messages:last-child {
+        scroll-snap-align: end;
     }
     
     [data-testid="stChatInput"] input,
@@ -233,6 +294,39 @@ def display_dashboard_header(title, subtitle=""):
             <h1 class="dashboard-title">🚀 {title}</h1>
             {f'<p class="dashboard-subtitle">{subtitle}</p>' if subtitle else ''}
         </div>
+    </div>
+    """
+    st.markdown(html, unsafe_allow_html=True)
+
+
+def display_sales_cta():
+    """Display a prominent CTA button for booking sales calls"""
+    html = f"""
+    <div style="margin: 1.5rem 0; padding: 1rem; background: #EFF6FF; border: 2px solid #3B82F6; border-radius: 12px; text-align: center;">
+        <p style="margin: 0 0 0.75rem 0; font-size: 0.95rem; color: #1F2937; font-weight: 500;">
+            💡 Ready to implement a solution for your business?
+        </p>
+        <a href="https://www.shurutech.com/contact-us" target="_blank" style="text-decoration: none;">
+            <button style="
+                background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+                color: white;
+                border: none;
+                padding: 0.75rem 2rem;
+                border-radius: 8px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+                transition: all 0.3s ease;
+            "
+            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(59, 130, 246, 0.4)';"
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.3)';">
+                📞 Book a Sales Call
+            </button>
+        </a>
+        <p style="margin: 0.75rem 0 0 0; font-size: 0.85rem; color: #6B7280;">
+            Let's discuss your specific requirements
+        </p>
     </div>
     """
     st.markdown(html, unsafe_allow_html=True)
