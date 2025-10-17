@@ -308,7 +308,7 @@ def display_dashboard_header(title, subtitle=""):
 
 
 def display_sales_cta():
-    """Display a prominent CTA button for booking sales calls - Shuru Tech Branded"""
+    """Display a prominent CTA button for contacting Shuru Tech"""
     html = f"""
     <div style="margin: 1.5rem 0; padding: 1.25rem; background: linear-gradient(135deg, #FAFAFA 0%, #F8F9FA 100%); border: 2px solid #291f3b; border-radius: 16px; text-align: center; box-shadow: 0 4px 16px rgba(41, 31, 59, 0.12);">
         <p style="margin: 0 0 1rem 0; font-size: 1rem; color: #291f3b; font-weight: 600; line-height: 1.5;">
@@ -330,7 +330,7 @@ def display_sales_cta():
             "
             onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 24px rgba(41, 31, 59, 0.4)';"
             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(41, 31, 59, 0.3)';">
-                📞 Book a Sales Call
+                Contact Us
             </button>
         </a>
         <p style="margin: 1rem 0 0 0; font-size: 0.875rem; color: #64748B; font-weight: 500;">
