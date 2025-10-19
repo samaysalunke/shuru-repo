@@ -10,11 +10,11 @@ source venv/bin/activate
 
 ### 2. Verify Setup (Optional)
 ```bash
-python test_dashboard.py
+python test_chatbot.py
 ```
 Expected output:
 ```
-✅ All tests passed! Dashboard structure is valid.
+✅ All systems operational! Ready for demo.
 ```
 
 ### 3. Launch the Application
@@ -121,15 +121,17 @@ streamlit run app.py --server.port 8502
 
 ```
 shuru-chatbot/
-├── app.py                          # Main application (NEW LAYOUT)
-├── ui_components.py                # UI component library (NEW)
+├── app.py                          # Main Streamlit application
+├── ui_components.py                # UI component library
 ├── knowledge_base.json             # Case studies data
-├── test_dashboard.py               # Validation tests (NEW)
+├── test_chatbot.py                 # RAG system validation tests
+├── scrape_website.py               # Advanced web scraper
+├── scrape_with_playwright.py       # JS-rendered content scraper
+├── merge_knowledge.py              # Knowledge base merger
 ├── requirements.txt                # Dependencies
 ├── .env                            # Environment variables
-├── DASHBOARD_REBUILD_SUMMARY.md   # Complete rebuild documentation
-├── BEFORE_AFTER.md                 # Visual comparison
-└── QUICKSTART.md                   # This file
+├── setup.sh / setup.bat            # Setup scripts
+└── README.md                       # Full documentation
 ```
 
 ---
@@ -173,17 +175,17 @@ for cs in case_studies_list[:25]:
 
 ## 🔗 Related Documentation
 
-- **`DASHBOARD_REBUILD_SUMMARY.md`** - Complete rebuild documentation
-- **`BEFORE_AFTER.md`** - Visual comparison of old vs new
-- **`README.md`** - Original project documentation
-- **`ui-rebuild-dashboard.plan.md`** - Implementation plan
+- **`README.md`** - Full project documentation
+- **`STREAMLIT_DEPLOYMENT.md`** - Deployment guide
+- **`DASHBOARD_REBUILD_SUMMARY.md`** - UI evolution notes
+- **`MOBILE_RESPONSIVE_GUIDE.md`** - Mobile optimization guide
 
 ---
 
 ## 🆘 Support
 
 If you encounter issues:
-1. Run `python test_dashboard.py` for diagnostics
+1. Run `python test_chatbot.py` for RAG system diagnostics
 2. Check all files are present: `app.py`, `ui_components.py`, `knowledge_base.json`
 3. Verify virtual environment is activated
 4. Check Streamlit version: `streamlit --version` (should be ≥1.31.0)
