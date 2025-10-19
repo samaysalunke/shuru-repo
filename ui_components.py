@@ -300,15 +300,16 @@ def inject_new_styles():
     
     .stTextInput > div > div > input {
         border-radius: var(--border-radius) !important;
-        border: 1px solid #e5e5e5 !important;
+        border: 1px solid #d0d0d0 !important;
         padding: 0.75rem 1rem !important;
         font-size: 16px !important;
         background: var(--bg-white) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
     }
     
     .stTextInput > div > div > input:focus {
         border-color: var(--border-green) !important;
-        box-shadow: 0 0 0 2px rgba(0, 184, 169, 0.1) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(0, 184, 169, 0.2) !important;
     }
     
     /* Responsive Design */
