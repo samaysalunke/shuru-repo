@@ -85,27 +85,14 @@ def inject_new_styles():
     .logo-container {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.75rem;
     }
     
-    .logo-icon {
-        width: 32px;
+    .logo-image {
         height: 32px;
-        background: var(--primary-gradient);
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 700;
-        font-size: 18px;
-    }
-    
-    .logo-text {
-        font-size: 24px;
-        font-weight: 700;
-        color: var(--text-dark);
-        margin: 0;
+        width: auto;
+        max-width: 120px;
+        object-fit: contain;
     }
     
     .logo-subtitle {
@@ -317,8 +304,9 @@ def inject_new_styles():
             padding: 1rem;
         }
         
-        .logo-text {
-            font-size: 20px;
+        .logo-image {
+            height: 28px;
+            max-width: 100px;
         }
         
         .logo-subtitle {
@@ -374,6 +362,11 @@ def inject_new_styles():
     }
     
     @media (max-width: 480px) {
+        .logo-image {
+            height: 24px;
+            max-width: 80px;
+        }
+        
         .logo-subtitle {
             display: none;
         }
@@ -397,11 +390,8 @@ def display_new_header():
     st.markdown("""
     <div class="chat-header">
         <div class="logo-container">
-            <div class="logo-icon">S</div>
-            <div>
-                <div class="logo-text">Shuru</div>
-                <div class="logo-subtitle">ShuruNow</div>
-            </div>
+            <img src="https://www.shurutech.com/images/logo-black-text.png" alt="Shuru Tech" class="logo-image">
+            <div class="logo-subtitle">ShuruNow</div>
         </div>
         <div class="help-icon">?</div>
     </div>
