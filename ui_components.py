@@ -40,7 +40,11 @@ def inject_new_styles():
         overflow: hidden;
     }
     
-    /* Hide Streamlit default elements */
+    /* Hide ALL Streamlit default elements */
+    header[data-testid="stHeader"] {
+        display: none !important;
+    }
+    
     .stApp > header {
         display: none !important;
     }
@@ -55,6 +59,29 @@ def inject_new_styles():
     
     .stDeployButton {
         display: none !important;
+    }
+    
+    /* Hide Streamlit toolbar */
+    [data-testid="stToolbar"] {
+        display: none !important;
+    }
+    
+    [data-testid="stDecoration"] {
+        display: none !important;
+    }
+    
+    .stActionButton {
+        display: none !important;
+    }
+    
+    /* Hide Streamlit branding and fork button */
+    .stApp > div[data-testid="stDecoration"] {
+        display: none !important;
+    }
+    
+    /* Ensure full height without toolbar */
+    .main .block-container {
+        padding-top: 0 !important;
     }
     
     /* Main container */
