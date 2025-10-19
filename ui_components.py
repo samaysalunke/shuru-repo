@@ -252,6 +252,9 @@ def inject_new_styles():
         border-radius: var(--border-radius);
         font-size: 16px;
         line-height: 1.5;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
     }
     
     .message-bubble.user {
@@ -278,6 +281,11 @@ def inject_new_styles():
         font-size: 14px;
         margin-top: 1rem;
         transition: transform 0.2s;
+        max-width: 100%;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .contact-button:hover {
@@ -363,6 +371,15 @@ def inject_new_styles():
             max-width: 85%;
             padding: 0.875rem 1rem;
             font-size: 14px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            box-sizing: border-box;
+        }
+        
+        .contact-button {
+            padding: 0.625rem 1.25rem;
+            font-size: 13px;
+            margin-top: 0.75rem;
         }
         
         .chat-input-container {
@@ -382,6 +399,17 @@ def inject_new_styles():
         
         .welcome-title {
             font-size: 20px;
+        }
+        
+        .message-bubble {
+            max-width: 90%;
+            padding: 0.75rem 0.875rem;
+        }
+        
+        .contact-button {
+            padding: 0.5rem 1rem;
+            font-size: 12px;
+            margin-top: 0.5rem;
         }
         
     }
