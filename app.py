@@ -322,21 +322,19 @@ Guidelines:
 def main():
     """Main application function"""
     from ui_components import (
-        inject_dashboard_styles,
-        display_dark_header,
-        display_dark_greeting,
-        display_dark_prompts,
-        display_case_study_item,
-        display_panel_header,
-        display_dashboard_header,
-        display_sales_cta
+        inject_new_styles,
+        display_new_header,
+        display_welcome_screen,
+        display_suggested_questions,
+        display_contact_button,
+        display_chat_message
     )
     
-    # Inject dark ChatGPT-style styles
-    inject_dashboard_styles()
+    # Inject new light theme styles
+    inject_new_styles()
     
-    # Display simplified header with Shuru logo only
-    display_dark_header()
+    # Display new header with logo and help icon
+    display_new_header()
     
     # Initialize bot in session state
     if 'bot' not in st.session_state:
@@ -351,31 +349,29 @@ def main():
     # CONDITIONAL CONTENT DISPLAY
     # ==========================================
     
-    # Show prompts if chat is empty
+    # Show welcome screen if chat is empty
     if not st.session_state.messages:
-        # Display centered greeting
-        display_dark_greeting()
+        # Display welcome screen with AI avatar
+        display_welcome_screen()
         
-        # Display prompt buttons below greeting
-        display_dark_prompts()
+        # Display suggested questions
+        display_suggested_questions()
     else:
-        # When chat is active, show answer container instead of main-content
-        st.markdown('<div class="answer-container">', unsafe_allow_html=True)
+        # When chat is active, show chat messages
+        st.markdown('<div class="chat-container">', unsafe_allow_html=True)
         
-        # Display all messages in a scrollable container
-        st.markdown('<div class="chat-messages-container">', unsafe_allow_html=True)
+        # Display all messages with custom styling
         for message in st.session_state.messages:
-            with st.chat_message(message["role"]):
-                st.markdown(message["content"])
-                
-                # Show CTA after assistant messages
-                if message["role"] == "assistant":
-                    display_sales_cta()
-        st.markdown('</div>', unsafe_allow_html=True)
+            display_chat_message(message["role"], message["content"])
+            
+            # Show Contact Us button after assistant messages
+            if message["role"] == "assistant":
+                display_contact_button()
+        
         st.markdown('</div>', unsafe_allow_html=True)
     
     # Chat input at bottom (full width, outside any columns)
-    prompt = st.chat_input("Type your business question...")
+    prompt = st.chat_input("Ask me anything...")
     
     # Handle selected prompt
     if "selected_prompt" in st.session_state:
@@ -383,27 +379,25 @@ def main():
         del st.session_state.selected_prompt
     
     # ==========================================
-    # MESSAGE PROCESSING (Simplified)
+    # MESSAGE PROCESSING
     # ==========================================
     if prompt:
-        # Add user message (no timestamps)
+        # Add user message
         st.session_state.messages.append({
             "role": "user",
             "content": prompt
         })
 
-        # Display user message
-        with st.chat_message("user"):
-            st.markdown(prompt)
+        # Display user message with custom styling
+        display_chat_message("user", prompt)
 
         # Get bot response
-        with st.chat_message("assistant"):
-            with st.spinner("✨ Finding relevant solutions..."):
-                response, sources = st.session_state.bot.get_response(prompt)
-                st.markdown(response)
-                
-                # Add CTA after response
-                display_sales_cta()
+        with st.spinner("✨ Finding relevant solutions..."):
+            response, sources = st.session_state.bot.get_response(prompt)
+            display_chat_message("assistant", response)
+            
+            # Add Contact Us button after response
+            display_contact_button()
 
         # Add assistant response to session state
         st.session_state.messages.append({
