@@ -158,20 +158,6 @@ def inject_new_styles():
         text-align: center;
     }
     
-    .ai-avatar {
-        width: 80px;
-        height: 80px;
-        background: var(--primary-gradient);
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 700;
-        font-size: 32px;
-        margin-bottom: 1.5rem;
-        box-shadow: var(--shadow-light);
-    }
     
     .welcome-title {
         font-size: 28px;
@@ -349,11 +335,6 @@ def inject_new_styles():
             padding: 1rem;
         }
         
-        .ai-avatar {
-            width: 64px;
-            height: 64px;
-            font-size: 24px;
-        }
         
         .welcome-title {
             font-size: 24px;
@@ -402,11 +383,6 @@ def inject_new_styles():
             font-size: 20px;
         }
         
-        .ai-avatar {
-            width: 56px;
-            height: 56px;
-            font-size: 20px;
-        }
     }
     </style>
     """, unsafe_allow_html=True)
@@ -426,10 +402,9 @@ def display_new_header():
 
 
 def display_welcome_screen():
-    """Display the welcome screen with AI avatar and greeting"""
+    """Display the welcome screen with greeting"""
     st.markdown("""
     <div class="welcome-container">
-        <div class="ai-avatar">AI</div>
         <h1 class="welcome-title">How can I help you today?</h1>
         <p class="welcome-subtitle">Ask me anything or choose from these suggestions</p>
     </div>
