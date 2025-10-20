@@ -79,6 +79,32 @@ def inject_new_styles():
         display: none !important;
     }
     
+    /* Hide Streamlit bottom footer/management area */
+    .stApp > footer {
+        display: none !important;
+    }
+    
+    div[data-testid="stBottom"] {
+        display: none !important;
+    }
+    
+    /* Hide any Streamlit management components */
+    [data-testid="stAppViewContainer"] > div:last-child {
+        display: none !important;
+    }
+    
+    /* Hide Streamlit deploy/manage buttons */
+    .stApp .stDeployButton,
+    .stApp [data-testid="stDeployButton"],
+    .stApp .manage-app-button {
+        display: none !important;
+    }
+    
+    /* Hide any bottom bar components */
+    .stApp > div:last-child {
+        display: none !important;
+    }
+    
     /* Ensure full height without toolbar */
     .main .block-container {
         padding-top: 0 !important;
