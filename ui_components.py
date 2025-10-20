@@ -53,7 +53,8 @@ def inject_new_styles():
         display: none !important;
     }
     
-    footer {
+    /* Hide Streamlit footer - but NOT the chat input footer */
+    footer:not(:has([data-testid="stChatInput"])) {
         display: none !important;
     }
     
@@ -79,8 +80,8 @@ def inject_new_styles():
         display: none !important;
     }
     
-    /* Hide Streamlit bottom footer/management area */
-    .stApp > footer {
+    /* Hide Streamlit bottom footer/management area - but NOT chat input */
+    .stApp > footer:not(:has([data-testid="stChatInput"])) {
         display: none !important;
     }
     
@@ -111,6 +112,25 @@ def inject_new_styles():
     [data-testid="stChatInput"] > div {
         display: block !important;
         visibility: visible !important;
+    }
+    
+    /* Force chat input footer to be visible */
+    footer:has([data-testid="stChatInput"]),
+    footer [data-testid="stChatInput"],
+    .stApp > footer:has([data-testid="stChatInput"]) {
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    /* Fallback: ensure any footer containing chat input is visible */
+    footer,
+    .stApp > footer {
+        display: block !important;
+    }
+    
+    /* Then hide specific unwanted footers */
+    .stApp > footer:not([data-testid="stChatInput"]):not(:has([data-testid="stChatInput"])) {
+        display: none !important;
     }
     
     /* Main container */
