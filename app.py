@@ -326,7 +326,7 @@ def main():
         display_new_header,
         display_welcome_screen,
         display_suggested_questions,
-        display_contact_button,
+        display_centered_contact_button,
         display_chat_message
     )
     
@@ -366,7 +366,7 @@ def main():
             
             # Show Contact Us button after assistant messages
             if message["role"] == "assistant":
-                display_contact_button()
+                display_centered_contact_button()
         
         st.markdown('</div>', unsafe_allow_html=True)
     
@@ -397,7 +397,7 @@ def main():
             display_chat_message("assistant", response)
             
             # Add Contact Us button after response
-            display_contact_button()
+            display_centered_contact_button()
 
         # Add assistant response to session state
         st.session_state.messages.append({

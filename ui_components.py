@@ -561,10 +561,11 @@ def display_suggested_questions():
     st.markdown('</div>', unsafe_allow_html=True)
 
 
-def display_contact_button():
-    """Display the Contact Us button with gradient styling"""
+def display_centered_contact_button():
+    """Display centered Contact Us button after assistant messages"""
     st.markdown("""
-    <div style="margin-top: 1rem;">
+    <div style="display: flex; flex-direction: column; align-items: center; margin: 1.5rem 0;">
+        <p style="color: #666; font-size: 14px; margin-bottom: 0.75rem;">Discover more</p>
         <a href="https://www.shurutech.com/contact-us" target="_blank" style="text-decoration: none;">
             <div class="contact-button">Contact Us</div>
         </a>
