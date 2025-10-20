@@ -84,12 +84,9 @@ def inject_new_styles():
         display: none !important;
     }
     
-    div[data-testid="stBottom"] {
-        display: none !important;
-    }
-    
-    /* Hide any Streamlit management components */
-    [data-testid="stAppViewContainer"] > div:last-child {
+    /* Hide Streamlit management components - be more specific */
+    .stApp footer[data-testid="stFooter"],
+    .stApp [data-testid="stBottom"] {
         display: none !important;
     }
     
@@ -97,11 +94,6 @@ def inject_new_styles():
     .stApp .stDeployButton,
     .stApp [data-testid="stDeployButton"],
     .stApp .manage-app-button {
-        display: none !important;
-    }
-    
-    /* Hide any bottom bar components */
-    .stApp > div:last-child {
         display: none !important;
     }
     
