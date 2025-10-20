@@ -53,10 +53,7 @@ def inject_new_styles():
         display: none !important;
     }
     
-    /* Hide Streamlit footer - but NOT the chat input footer */
-    footer:not(:has([data-testid="stChatInput"])) {
-        display: none !important;
-    }
+    /* Don't hide footers generically - let chat input show by default */
     
     .stDeployButton {
         display: none !important;
@@ -80,10 +77,7 @@ def inject_new_styles():
         display: none !important;
     }
     
-    /* Hide Streamlit bottom footer/management area - but NOT chat input */
-    .stApp > footer:not(:has([data-testid="stChatInput"])) {
-        display: none !important;
-    }
+    /* Hide specific Streamlit management components only */
     
     /* Hide Streamlit management components - be more specific */
     .stApp footer[data-testid="stFooter"],
@@ -103,35 +97,13 @@ def inject_new_styles():
         padding-top: 0 !important;
     }
     
-    /* Ensure input components are visible */
-    .stTextInput,
-    .stChatInput,
-    .stTextInput > div,
-    .stChatInput > div,
-    [data-testid="stChatInput"],
-    [data-testid="stChatInput"] > div {
+    /* Ensure Streamlit chat input is visible */
+    [data-testid="stChatInput"] {
         display: block !important;
         visibility: visible !important;
     }
     
-    /* Force chat input footer to be visible */
-    footer:has([data-testid="stChatInput"]),
-    footer [data-testid="stChatInput"],
-    .stApp > footer:has([data-testid="stChatInput"]) {
-        display: block !important;
-        visibility: visible !important;
-    }
-    
-    /* Fallback: ensure any footer containing chat input is visible */
-    footer,
-    .stApp > footer {
-        display: block !important;
-    }
-    
-    /* Then hide specific unwanted footers */
-    .stApp > footer:not([data-testid="stChatInput"]):not(:has([data-testid="stChatInput"])) {
-        display: none !important;
-    }
+    /* Keep it simple - let Streamlit render chat input naturally */
     
     /* Main container */
     .main {
