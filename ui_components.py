@@ -97,10 +97,32 @@ def inject_new_styles():
         padding-top: 0 !important;
     }
     
-    /* Ensure Streamlit chat input is visible */
-    [data-testid="stChatInput"] {
+    /* Ensure Streamlit chat input is visible - target correct class */
+    .stChatFloatingInputContainer {
         display: block !important;
         visibility: visible !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        background: var(--bg-white) !important;
+        padding: 1rem 2rem !important;
+        border-top: 1px solid #e5e5e5 !important;
+    }
+    
+    .stChatFloatingInputContainer input {
+        border-radius: var(--border-radius) !important;
+        border: 1px solid #d0d0d0 !important;
+        padding: 0.75rem 1rem !important;
+        font-size: 16px !important;
+        background: var(--bg-white) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+    }
+    
+    .stChatFloatingInputContainer input:focus {
+        border-color: var(--border-green) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(0, 184, 169, 0.2) !important;
     }
     
     /* Keep it simple - let Streamlit render chat input naturally */
@@ -345,31 +367,6 @@ def inject_new_styles():
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(0, 184, 169, 0.2) !important;
     }
     
-    /* Chat input specific styling */
-    [data-testid="stChatInput"] {
-        position: fixed !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        z-index: 1000 !important;
-        background: var(--bg-white) !important;
-        padding: 1rem 2rem !important;
-        border-top: 1px solid #e5e5e5 !important;
-    }
-    
-    [data-testid="stChatInput"] > div > div > input {
-        border-radius: var(--border-radius) !important;
-        border: 1px solid #d0d0d0 !important;
-        padding: 0.75rem 1rem !important;
-        font-size: 16px !important;
-        background: var(--bg-white) !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
-    }
-    
-    [data-testid="stChatInput"] > div > div > input:focus {
-        border-color: var(--border-green) !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(0, 184, 169, 0.2) !important;
-    }
     
     /* Responsive Design */
     @media (max-width: 768px) {
@@ -437,7 +434,7 @@ def inject_new_styles():
             padding: 1rem;
         }
         
-        [data-testid="stChatInput"] {
+        .stChatFloatingInputContainer {
             padding: 1rem !important;
         }
     }
