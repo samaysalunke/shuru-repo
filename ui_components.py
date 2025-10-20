@@ -80,8 +80,12 @@ def inject_new_styles():
     /* Hide specific Streamlit management components only */
     
     /* Hide Streamlit management components - be more specific */
-    .stApp footer[data-testid="stFooter"],
-    .stApp [data-testid="stBottom"] {
+    .stApp footer[data-testid="stFooter"] {
+        display: none !important;
+    }
+    
+    /* Hide stBottom only if it doesn't contain chat input */
+    .stApp [data-testid="stBottom"]:not(:has([data-testid="stChatInput"])) {
         display: none !important;
     }
     
@@ -98,7 +102,8 @@ def inject_new_styles():
     }
     
     /* Ensure Streamlit chat input is visible - target correct class */
-    .stChatFloatingInputContainer {
+    /* Ensure Streamlit chat input is visible and properly styled */
+    [data-testid="stChatInput"] {
         display: block !important;
         visibility: visible !important;
         position: fixed !important;
@@ -111,16 +116,17 @@ def inject_new_styles():
         border-top: 1px solid #e5e5e5 !important;
     }
     
-    .stChatFloatingInputContainer input {
+    [data-testid="stChatInput"] input {
         border-radius: var(--border-radius) !important;
         border: 1px solid #d0d0d0 !important;
         padding: 0.75rem 1rem !important;
         font-size: 16px !important;
         background: var(--bg-white) !important;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+        width: 100% !important;
     }
     
-    .stChatFloatingInputContainer input:focus {
+    [data-testid="stChatInput"] input:focus {
         border-color: var(--border-green) !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(0, 184, 169, 0.2) !important;
     }
@@ -434,7 +440,7 @@ def inject_new_styles():
             padding: 1rem;
         }
         
-        .stChatFloatingInputContainer {
+        [data-testid="stChatInput"] {
             padding: 1rem !important;
         }
     }
