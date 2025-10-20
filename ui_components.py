@@ -207,13 +207,17 @@ def inject_new_styles():
     .chat-container {
         height: calc(100vh - 120px);
         overflow-y: auto;
-        padding: 1rem 2rem 0 2rem;
+        padding: 1rem 2rem 120px 2rem;
     }
     
     .message-container {
         display: flex;
         margin-bottom: 1.5rem;
         align-items: flex-start;
+    }
+    
+    .message-container:last-child {
+        margin-bottom: 2rem;
     }
     
     .message-container.user {
@@ -363,7 +367,7 @@ def inject_new_styles():
         }
         
         .chat-container {
-            padding: 1rem;
+            padding: 1rem 1rem 100px 1rem;
             height: calc(100vh - 100px);
         }
         
